@@ -1,23 +1,16 @@
 /* --- Global Styles --- */
 body {
-  background: radial-gradient(at 15% 30%, rgba(0, 120, 255, 0.15), transparent 60%),
-              radial-gradient(at 80% 70%, rgba(0, 255, 180, 0.1), transparent 60%),
-              #0b0f16;
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.6;
+  color: #e0e0e0;
+
+  /* Glavna aurora pozadina */
+  background:
+    radial-gradient(at 20% 30%, rgba(0, 120, 255, 0.15), transparent 60%),
+    radial-gradient(at 80% 70%, rgba(0, 255, 180, 0.1), transparent 60%),
+    #0b0f16;
   background-attachment: fixed;
-}
-
-
-/* Links & Headings */
-a { text-decoration: none; color: #58a6ff; transition: 0.2s; }
-a:hover { color: #79b8ff; }
-h1, h2, h3 { margin: 0 0 15px; color: #f5f5f5; }
-p { margin: 0 0 20px; color: #ccc; }
-
-/* --- Container --- */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
 }
 
 /* --- Hero Section --- */
@@ -28,52 +21,27 @@ p { margin: 0 0 20px; color: #ccc; }
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background: radial-gradient(circle at top left, #0d1117 0%, #0a0f14 100%);
   color: #e0e0e0;
   padding: 0 20px;
-}
 
-.hero h1 {
-  font-size: 3.5em;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #58a6ff;
-  text-shadow: 0 0 15px rgba(88,166,255,0.4);
-}
-
-.hero p {
-  font-size: 1.3em;
-  max-width: 700px;
-  margin-bottom: 40px;
-  color: #9ba3af;
-}
-
-.cta {
-  background: linear-gradient(90deg, #007bff, #00c6ff);
-  color: #fff;
-  padding: 14px 45px;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: 0.3s;
-  box-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
-}
-
-.cta:hover {
-  background: linear-gradient(90deg, #00c6ff, #007bff);
-  transform: translateY(-3px);
-  box-shadow: 0 0 25px rgba(0, 198, 255, 0.6);
-  cursor:pointer;
+  /* transparentan overlay preko iste aurora pozadine */
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 /* --- Section Styles --- */
 section {
   padding: 100px 0;
-  background: #0f141a;
+  background: rgba(0, 0, 0, 0.25); /* lagani kontrast hero dijelu */
+  backdrop-filter: blur(4px);
   border-top: 1px solid rgba(255,255,255,0.05);
 }
+
 section.alt {
-  background: #111820;
+  background: rgba(255, 255, 255, 0.02); /* suptilna izmjena nijanse */
 }
+
 section h2 {
   text-align: center;
   margin-bottom: 50px;
@@ -82,148 +50,12 @@ section h2 {
   text-shadow: 0 0 10px rgba(88,166,255,0.4);
 }
 
-/* --- Grid --- */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* --- Iframe wrapper --- */
-.iframe-wrap {
-  display: flex;
-  justify-content: center;
-  margin: 50px 0;
-}
-
-.iframe-box {
-  width: 100%;
-  max-width: 1600px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.5);
-  backdrop-filter: blur(8px);
-  overflow: hidden;
-}
-
-.iframe-box iframe {
-  width: 100%;
-  height: 800px;
-  border: 0;
-  display: block;
-}
-
-/* --- Mobile responsiveness --- */
-@media (max-width: 1024px) {
-  .iframe-box iframe {
-    height: calc((9 / 16) * 100vw);
-    max-height: 700px;
-  }
-}
-
-/* --- Pricing Cards --- */
-.pricing-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 40px 25px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  backdrop-filter: blur(6px);
-}
-
-.pricing-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 30px rgba(0,198,255,0.3);
-}
-
-.pricing-card h3 {
-  margin-bottom: 15px;
-  font-size: 1.6em;
-  color: #fff;
-}
-
-.pricing-card .price {
-  font-size: 2em;
-  font-weight: 700;
-  color: #58a6ff;
-  margin: 25px 0;
-}
-
-.pricing-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px 0;
-}
-
-.pricing-card ul li {
-  margin-bottom: 10px;
-  color: #b0b0b0;
-}
-
-.pricing-card .cta {
-  margin-top: auto;
-}
-
-/* Featured Card */
-.pricing-card.featured {
-  border: 1px solid #00c6ff;
-  background: rgba(0, 198, 255, 0.1);
-}
-
-/* --- Kalkulator Section --- */
-#calc {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.calc-box {
-  background: rgba(255,255,255,0.05);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  backdrop-filter: blur(5px);
-}
-
-.calc-box input {
-  padding: 10px;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 6px;
-  width: 100%;
-  background: rgba(255,255,255,0.08);
-  color: #fff;
-  font-size: 1em;
-}
-
-.calc-box button {
-  padding: 12px 20px;
-  background: linear-gradient(90deg, #007bff, #00c6ff);
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.calc-box button:hover {
-  background: linear-gradient(90deg, #00c6ff, #007bff);
-  transform: translateY(-2px);
-}
-
 /* --- Footer --- */
 footer {
   text-align: center;
   padding: 60px 20px;
-  background: #0a0f14;
+  background: rgba(0, 0, 0, 0.4);
   color: #9ba3af;
   border-top: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(4px);
 }
