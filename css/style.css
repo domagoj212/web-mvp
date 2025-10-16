@@ -20,7 +20,6 @@ p { margin: 0 0 20px; color: #ccc; }
   margin: 0 auto;
   padding: 0 40px;
 }
-
 /* --- Hero Section --- */
 .hero {
   display: flex;
@@ -29,10 +28,12 @@ p { margin: 0 0 20px; color: #ccc; }
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background: radial-gradient(circle at top left, #0d1117 0%, #0a0f14 100%);
   color: #e0e0e0;
   padding: 0 20px;
+
+  /* uklonjen background da se vidi aurora efekt iz body */
 }
+
 
 .hero h1 {
   font-size: 3.5em;
