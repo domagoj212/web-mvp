@@ -1,14 +1,13 @@
 /* --- Global Styles --- */
 body {
-  margin: 0;
-  font-family: 'Inter', Arial, sans-serif;
-  line-height: 1.6;
-  color: #e0e0e0;
-  background: radial-gradient(circle at 20% 30%, #111820, transparent 40%),
-              radial-gradient(circle at 80% 70%, #0c1824, transparent 40%),
-              #0d1117;
+  background-color: #0d1117;
+  background-image: 
+    linear-gradient(120deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(60deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
   background-attachment: fixed;
 }
+
 
 /* Links & Headings */
 a { text-decoration: none; color: #58a6ff; transition: 0.2s; }
