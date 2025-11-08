@@ -106,13 +106,24 @@ section h2 {
   background: rgba(15, 20, 26, 0.9);
   border-radius: 12px;
 
-  /* ✨ Add this subtle border + glow */
+  /* ✨ Subtle border + inner glow */
   border: 1px solid rgba(88, 166, 255, 0.25);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5),
               0 0 15px rgba(88, 166, 255, 0.08) inset;
 
   backdrop-filter: blur(8px);
   overflow: hidden;
+
+  /* ✅ Added smooth transition for hover effect */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ✨ Hover Zoom Effect (does not affect cropping) */
+.iframe-box:hover {
+  transform: scale(1.008); /* very subtle zoom-in */
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.55),
+              0 0 20px rgba(88, 166, 255, 0.1) inset;
+  cursor: pointer;
 }
 
 
@@ -156,6 +167,7 @@ section h2 {
     max-height: 700px;
   }
 }
+
 
 /* --- Pricing Cards --- */
 .pricing-card {
