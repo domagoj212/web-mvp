@@ -104,22 +104,38 @@ section h2 {
   margin: 50px 0;
 }
 
+/* --- Iframe container with fixed 16:9 ratio --- */
 .iframe-box {
+  position: relative;
   width: 100%;
   max-width: 1600px;
-  background: rgba(255, 255, 255, 0.05);
+  aspect-ratio: 16 / 9; /* ⬅️ maintains 16:9 ratio automatically */
+  background: rgba(15, 20, 26, 0.9);
   border-radius: 12px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   overflow: hidden;
 }
 
+/* Fallback for browsers without aspect-ratio support */
+.iframe-box::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* 9 / 16 = 0.5625 → 56.25% */
+}
+
+/* --- Iframe itself --- */
 .iframe-box iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 800px;
+  height: 100%;
   border: 0;
   display: block;
+  background-color: rgb(18, 24, 34); /* dark match for your theme */
 }
+
 
 /* --- Mobile responsiveness --- */
 @media (max-width: 1024px) {
