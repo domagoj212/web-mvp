@@ -123,10 +123,6 @@ section h2 {
 }
 
 
-/* Optional subtle hover zoom for style */
-.iframe-box:hover iframe {
-  transform: translateX(-2.5%) scale(1.01);
-}
 
 
 /* --- Mobile responsiveness --- */
