@@ -115,9 +115,9 @@ section h2 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 105%;   /* slightly wider to “eat up” white edges */
-  height: 100%;
-  transform: translateX(-2.5%); /* centers the zoomed frame */
+  width: 110%;   /* slightly wider to “eat up” white edges */
+  height: 95%;
+  transform: translateX(-3.5%); /* centers the zoomed frame */
   border: none;
   display: block;
   background-color: rgb(18, 24, 34); /* theme match */
