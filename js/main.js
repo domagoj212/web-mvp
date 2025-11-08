@@ -61,8 +61,8 @@ iframeBoxes.forEach(box => {
     message.style.boxShadow = '0 0 20px rgba(0,0,0,0.5)';
 
     message.innerHTML = `
-      <h2>Subscribe for full access</h2>
-      <p>This is just a demo. Full access requires subscription.</p>
+      <h2>Alat vam je koristan?</h2>
+      <p>Kontaktirajte nas i pretplatite se na puni pristup.</p>
     `;
 
     const okBtn = document.createElement('button');
