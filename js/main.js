@@ -84,7 +84,7 @@ iframeBoxes.forEach(box => {
     clearTimeout(timer);
     timer = setTimeout(() => {
       createOverlay();
-    }, 5000);
+    }, 45000);
   };
 
   // Trigger timer on hover
