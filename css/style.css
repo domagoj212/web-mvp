@@ -97,6 +97,7 @@ section h2 {
   margin: 0 auto;
 }
 
+/* --- Power BI Iframe Wrapper --- */
 .iframe-box {
   position: relative;
   width: 100%;
@@ -106,22 +107,40 @@ section h2 {
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
-  overflow: hidden; /* this hides cropped part */
+  overflow: hidden; /* hides cropped ribbon */
 }
 
-/* Crop bottom ribbon */
+/* --- Responsive cropping --- */
 .iframe-box iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 110%; /* stretch vertically so we can crop bottom */
-  transform: translateY(-5%); /* move it up to hide Power BI ribbon */
+  height: 110%; /* extra vertical area so bottom can be cropped */
+  transform: translateY(-5%); /* moves frame up to hide Power BI ribbon */
   border: none;
   display: block;
   background-color: #0b0f16;
 }
 
+/* --- Responsive adjustment for smaller screens --- */
+@media (max-width: 1024px) {
+  .iframe-box {
+    aspect-ratio: 16 / 9; /* still 16:9 */
+  }
+
+  .iframe-box iframe {
+    height: 112%;     /* ribbon can look taller on mobile, so add a bit more */
+    transform: translateY(-6%);
+  }
+}
+
+@media (max-width: 600px) {
+  .iframe-box iframe {
+    height: 115%;
+    transform: translateY(-7%);
+  }
+}
 
 
 /* --- Mobile responsiveness --- */
