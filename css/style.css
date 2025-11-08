@@ -102,12 +102,12 @@ section h2 {
   position: relative;
   width: 100%;
   max-width: 1600px;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 8 / 5; /* slightly narrower than 16:9 to compensate Power BI ribbon */
   background: rgba(15, 20, 26, 0.9);
   border-radius: 12px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
-  overflow: hidden; /* hides extra edges after zoom */
+  overflow: hidden;
 }
 
 /* --- Iframe itself --- */
@@ -115,14 +115,13 @@ section h2 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 125%;   /* slightly wider to “eat up” white edges */
-  height: 80%;
-  transform: translateX(-5.5%); /* centers the zoomed frame */
+  width: 100%;
+  height: 100%;
   border: none;
   display: block;
-  background-color: rgb(18, 24, 34); /* theme match */
-  transition: transform 0.3s ease;
+  background-color: #0b0f16; /* matches your site background */
 }
+
 
 /* Optional subtle hover zoom for style */
 .iframe-box:hover iframe {
