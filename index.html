@@ -5,7 +5,212 @@
   <link rel="icon" type="image/png" href="img.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Preglednik javne nabave</title>
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* --- Global Styles --- */
+    body {
+      background: 
+        radial-gradient(at 15% 30%, rgba(0, 120, 255, 0.15), transparent 60%),
+        radial-gradient(at 80% 70%, rgba(0, 255, 180, 0.1), transparent 60%),
+        #0b0f16;
+      background-attachment: fixed;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      color: #ccc;
+    }
+
+    a { text-decoration: none; color: #58a6ff; transition: 0.2s; }
+    a:hover { color: #79b8ff; }
+    h1, h2, h3 { margin: 0 0 15px; color: #f5f5f5; }
+    p { margin: 0 0 20px; color: #ccc; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: #e0e0e0;
+      padding: 0 20px;
+      background: transparent;
+    }
+
+    .hero h1 {
+      font-size: 3.5em;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #58a6ff;
+      text-shadow: 0 0 15px rgba(88,166,255,0.4);
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      max-width: 700px;
+      margin-bottom: 40px;
+      color: #9ba3af;
+    }
+
+    .cta {
+      background: linear-gradient(90deg, #007bff, #00c6ff);
+      color: #fff;
+      padding: 14px 45px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(0, 198, 255, 0.4);
+    }
+
+    .cta:hover {
+      background: linear-gradient(90deg, #00c6ff, #007bff);
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px rgba(0, 198, 255, 0.6);
+      cursor: pointer;
+    }
+
+    section {
+      padding: 100px 0;
+      background: rgba(15, 20, 26, 0.5);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    section.alt {
+      background: rgba(17, 24, 32, 0.5);
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.4em;
+      color: #58a6ff;
+      text-shadow: 0 0 10px rgba(88,166,255,0.4);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* --- Power BI Iframe Wrapper --- */
+    .iframe-box {
+      position: relative;
+      width: 100%;
+      max-width: 1600px;
+      aspect-ratio: 16 / 9;
+      background: rgba(15, 20, 26, 0.9);
+      border-radius: 12px;
+
+      border: 1px solid rgba(88, 166, 255, 0.25);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5),
+                  0 0 15px rgba(88, 166, 255, 0.08) inset;
+
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .iframe-box:hover {
+      transform: scale(1.025); /* subtle zoom on hover */
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.55),
+                  0 0 20px rgba(88, 166, 255, 0.1) inset;
+      cursor: pointer;
+    }
+
+    .iframe-box iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110%;
+      transform: translateY(-5%);
+      border: none;
+      display: block;
+      background-color: #0b0f16;
+    }
+
+    @media (max-width: 1024px) {
+      .iframe-box iframe { height: 112%; transform: translateY(-6%); }
+    }
+    @media (max-width: 600px) {
+      .iframe-box iframe { height: 115%; transform: translateY(-7%); }
+    }
+
+    /* --- Pricing Cards --- */
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 40px 25px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(6px);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 30px rgba(0,198,255,0.3);
+    }
+
+    .pricing-card h3 { margin-bottom: 15px; font-size: 1.6em; color: #fff; }
+    .pricing-card .price { font-size: 2em; font-weight: 700; color: #58a6ff; margin: 25px 0; }
+    .pricing-card ul { list-style: none; padding: 0; margin: 0 0 20px 0; }
+    .pricing-card ul li { margin-bottom: 10px; color: #b0b0b0; }
+    .pricing-card .cta { margin-top: auto; }
+    .pricing-card.featured { border: 1px solid #00c6ff; background: rgba(0, 198, 255, 0.1); }
+
+    /* --- Kalkulator Section --- */
+    #calc { max-width: 700px; margin: 0 auto; }
+    .calc-box { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.4); display: flex; flex-direction: column; gap: 15px; backdrop-filter: blur(5px); }
+    .calc-box input { padding: 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; width: 100%; background: rgba(255,255,255,0.08); color: #fff; font-size: 1em; }
+    .calc-box button { padding: 12px 20px; background: linear-gradient(90deg, #007bff, #00c6ff); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+    .calc-box button:hover { background: linear-gradient(90deg, #00c6ff, #007bff); transform: translateY(-2px); }
+
+    footer { text-align: center; padding: 60px 20px; background: rgba(10, 15, 20, 0.5); color: #9ba3af; border-top: 1px solid rgba(255,255,255,0.05); }
+
+    /* --- Demo overlay for iframe --- */
+    .iframe-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 20, 26, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      border-radius: 12px;
+      z-index: 10;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .iframe-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .overlay-content h2 {
+      font-size: 2em;
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+    .overlay-content p { font-size: 1.2em; color: #ccc; }
+  </style>
 </head>
 <body>
 
@@ -17,58 +222,62 @@
   </section>
 
   <!-- Case Study / Example -->
-<section class="container">
-  <h2>Alat za sve</h2>
-  <div class="grid">
-    <div>
-      <h3>Mogućnosti</h3>
-      <div class="features">
-        <p>• Pregled podataka o javnim nabavama</p>
-        <p>• Responzivne vizualizacije i analitike</p>
-        <p>• Mogućnost3</p>
+  <section class="container">
+    <h2>Alat za sve</h2>
+    <div class="grid">
+      <div>
+        <h3>Mogućnosti</h3>
+        <div class="features">
+          <p>• Pregled podataka o javnim nabavama</p>
+          <p>• Responzivne vizualizacije i analitike</p>
+          <p>• Mogućnost3</p>
+        </div>
+      </div>
+
+      <div>
+        <h3>Industrije</h3>
+        <div class="features">
+          <p>• Građevinarstvo</p>
+          <p>• Medicinska industrija</p>
+          <p>• Strojarstvo i strojarska oprema</p>
+          <p>• Turizam</p>
+          <p>• Ostalo</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div>
-      <h3>Industrije</h3>
-      <div class="features">
-        <p>• Građevinarstvo</p>
-        <p>• Medicinska industrija</p>
-        <p>• Strojarstvo i strojarska oprema</p>
-        <p>• Turizam</p>
-        <p>• Ostalo</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Iframe section -->
+  <!-- Demo Iframe section with timer -->
   <section class="container alt">
     <h2>Demo alata na uzorku od 45 dana</h2>
     <p style="text-align:center;">Općeniti prikaz</p>
 
-    <div class="iframe-wrap">
+    <div class="iframe-wrap" id="demo-iframe-container">
       <div class="iframe-box">
         <iframe
-          src="https://app.powerbi.com/view?r=eyJrIjoiZGFkZmQ1YTQtYTVhNi00Yzg1LWEyNjgtYTFjMTRjOWZmYjNjIiwidCI6IjEwODY3YzMxLWQ5NDYtNDYyNS04OGE0LWUzNTlkYTFiYTIxZiIsImMiOjl9"
+          src="https://app.powerbi.com/view?r=eyJrIjoiZGFkZmQ1YTQtYImMiOjl9"
           title="Demo iframe"
           sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
           allowfullscreen
         ></iframe>
       </div>
+      <!-- Overlay -->
+      <div class="iframe-overlay" id="demo-overlay">
+        <div class="overlay-content">
+          <h2>Subscribe for full access</h2>
+          <p>This is just a demo. Full access requires subscription.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-
-  <!-- Iframe section -->
+  <!-- Second Iframe section -->
   <section class="container alt">
     <p style="text-align:center;">Osnovni pregled ugovora</p>
-
     <div class="iframe-wrap">
       <div class="iframe-box">
         <iframe
-          src="https://app.powerbi.com/view?r=eyJrIjoiZGFkZmQ1YTQtYTVhNi00Yzg1LWEyNjgtYTFjMTRjOWZmYjNjIiwidCI6IjEwODY3YzMxLWQ5NDYtNDYyNS04OGE0LWUzNTlkYTFiYTIxZiIsImMiOjl9&pageName=700583317c0b47f948ca"
+          src="https://app.powerbi.com/view?r=eyJrIjoiZGFkZmQ1YTQtYTVName=700583317c0b47f948ca"
           title="Demo iframe"
           sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
           allowfullscreen
@@ -77,67 +286,55 @@
     </div>
   </section>
 
- 
-
   <!-- Pricing Section -->
-<section class="container alt">
-  <h2>Odaberi svoju pretplatu</h2>
-  <p style="text-align:center; margin-bottom:40px;">Tri jednostavne opcije koje pokrivaju sve potrebe</p>
-
-  <div class="grid">
-    <!-- Kartica 1 -->
-    <div class="pricing-card">
-      <h3>Osnovna</h3>
-      <p>Idealno za male timove i testiranje proizvoda.</p>
-      <p class="price">€19 / mjesečno</p>
-      <ul>
-        <li>Do 3 korisnika</li>
-        <li>Prikaz jedne industrije ili lokalne samouprave</li>
-        <li>Osnovne analize i prikazi</li>
-      </ul>
-      <a class="cta" href="mailto:kontakt@tvojafirma.com">Odaberi</a>
+  <section class="container alt">
+    <h2>Odaberi svoju pretplatu</h2>
+    <p style="text-align:center; margin-bottom:40px;">Tri jednostavne opcije koje pokrivaju sve potrebe</p>
+    <div class="grid">
+      <div class="pricing-card">
+        <h3>Osnovna</h3>
+        <p>Idealno za male timove i testiranje proizvoda.</p>
+        <p class="price">€19 / mjesečno</p>
+        <ul>
+          <li>Do 3 korisnika</li>
+          <li>Prikaz jedne industrije ili lokalne samouprave</li>
+          <li>Osnovne analize i prikazi</li>
+        </ul>
+        <a class="cta" href="mailto:kontakt@tvojafirma.com">Odaberi</a>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Pro</h3>
+        <p>Za ozbiljnije timove i veći opseg rada.</p>
+        <p class="price">€49 / mjesečno</p>
+        <ul>
+          <li>Potpuni i prošireni prikaz prema industriji</li>
+          <li>Do 7 korisnika</li>
+          <li>Naprednije analitike i izvještaji</li>
+          <li>Mogućnosti obavijesti i alertova</li>
+        </ul>
+        <a class="cta" href="mailto:kontakt@tvojafirma.com">Odaberi</a>
+      </div>
+      <div class="pricing-card">
+        <h3>Premium</h3>
+        <p>Enterprise rješenja</p>
+        <p class="price">od 200 € mjesečno</p>
+        <ul>
+          <li>Do neograničenog broja korisnika</li>
+          <li>Funkcionalnosti i alat tailor made</li>
+          <li>Napredne analitike</li>
+          <li>AI predikcije i analize</li>
+        </ul>
+        <a class="cta" href="mailto:kontakt@tvojafirma.com">Odaberi</a>
+      </div>
     </div>
-
-    <!-- Kartica 2 -->
-    <div class="pricing-card featured">
-      <h3>Pro</h3>
-      <p>Za ozbiljnije timove i veći opseg rada.</p>
-      <p class="price">€49 / mjesečno</p>
-      <ul>
-        <li>Potpuni i prošireni prikaz prema industriji</li>
-        <li>Do 7 korisnika</li>
-        <li>Naprednije analitike i izvještaji</li>
-        <li>Mogućnosti obavijesti i alertova</li>
-      </ul>
-      <a class="cta" href="mailto:kontakt@tvojafirma.com">Odaberi</a>
-    </div>
-
-    <!-- Kartica 3 -->
-    <div class="pricing-card">
-      <h3>Premium</h3>
-      <p>Enterprise rješenja</p>
-      <p class="price">od 200 € mjesečno</p>
-      <ul>
-        <li>Do neograničenog broja korisnika</li>
-        <li>Funkcionalnosti i alat tailor made</li>
-        <li>Napredne analitike</li>
-        <li>AI predikcije i analize</li>
-      </ul>
-      <a class="cta" href="mailto:kontakt@tvojafirma.com">Odaberi</a>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Kalkulator sekcija -->
-<section class="container alt">
-  <h2>Izračunaj cijenu 123</h2>
-  <p style="text-align:center;">Unesi parametre i dobiješ okvirnu cijenu.</p>
-
-  <!-- Ovdje JS ubacuje kalkulator -->
-  <div id="calc"></div>
-</section>
-  
+  <section class="container alt">
+    <h2>Izračunaj cijenu 123</h2>
+    <p style="text-align:center;">Unesi parametre i dobiješ okvirnu cijenu.</p>
+    <div id="calc"></div>
+  </section>
 
   <!-- Features -->
   <section class="container">
@@ -172,28 +369,15 @@
     &copy; 2025 Ime Proizvoda | Sva prava zadržana
   </footer>
 
-  <script src="js/main.js"></script>
+  <script>
+    // Demo iframe overlay timer
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const overlay = document.getElementById('demo-overlay');
+        overlay.classList.add('active');
+      }, 5000); // show overlay after 5 seconds
+    });
+  </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
