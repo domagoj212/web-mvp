@@ -118,7 +118,7 @@ section h2 {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 
   /* Add vertical spacing between widgets */
-  margin: 75px 0;
+  margin: 35px 0;
 }
 
 /* ✨ Hover Zoom Effect (does not affect cropping) */
