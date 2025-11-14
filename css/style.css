@@ -290,14 +290,6 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* --- Small Iframes Grid (2 per row) --- */
-.grid-small {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
 .iframe-card {
   width: 48%; /* 2 per row */
   display: flex;
@@ -309,28 +301,28 @@ footer {
 .small-iframe {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 aspect ratio */
+  aspect-ratio: 16 / 9; /* same as full-size */
   background: rgba(15, 20, 26, 0.9);
   border-radius: 12px;
   border: 1px solid rgba(88, 166, 255, 0.25);
-  box-shadow: 0 0 25px rgba(0,0,0,0.5), 0 0 15px rgba(88,166,255,0.08) inset;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(88, 166, 255, 0.08) inset;
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .small-iframe iframe {
   position: absolute;
-  top: -5%; /* match large iframe cropping */
+  top: -5%;
   left: 0;
   width: 100%;
-  height: 110%; /* match large iframe cropping */
+  height: 110%;
   border: none;
   display: block;
   background-color: #0b0f16;
   transition: transform 0.4s ease;
 }
 
-/* Hover Zoom Effect */
+/* Hover Zoom */
 .small-iframe:hover {
   transform: scale(1.05);
   box-shadow: 0 0 35px rgba(0,0,0,0.55), 0 0 20px rgba(88,166,255,0.1) inset;
@@ -352,21 +344,14 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .iframe-card {
-    width: 100%; /* stack on tablets */
-  }
-  .small-iframe iframe {
-    top: -6%;
-    height: 112%;
-  }
+  .iframe-card { width: 100%; }
+  .small-iframe iframe { top: -6%; height: 112%; }
 }
 
 @media (max-width: 600px) {
-  .small-iframe iframe {
-    top: -7%;
-    height: 115%;
-  }
+  .small-iframe iframe { top: -7%; height: 115%; }
 }
+
 
 
 
