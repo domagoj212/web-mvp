@@ -320,10 +320,10 @@ footer {
 
 .small-iframe iframe {
   position: absolute;
-  top: calc(-5% * 0.5); /* proportional to 50% scale, adjust if container is smaller */
+  top: -5%;      /* same as large iframe */
   left: 0;
   width: 100%;
-  height: calc(110% * 0.5); /* proportional scaling of full-size iframe */
+  height: 110%;  /* same as large iframe */
   border: none;
   display: block;
   background-color: #0b0f16;
@@ -338,7 +338,7 @@ footer {
 }
 
 .small-iframe:hover iframe {
-  transform: translateY(calc(-5% * 0.5));
+  transform: translateY(-5%);
 }
 
 /* Description text under iframe */
@@ -352,19 +352,20 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .iframe-card { width: 100%; }
+  .iframe-card { width: 100%; } /* stack on tablets */
   .small-iframe iframe { 
-    top: calc(-6% * 0.5); 
-    height: calc(112% * 0.5); 
+    height: 112%;    /* same as large iframe at this breakpoint */
+    transform: translateY(-6%);
   }
 }
 
 @media (max-width: 600px) {
   .small-iframe iframe { 
-    top: calc(-7% * 0.5); 
-    height: calc(115% * 0.5); 
+    height: 115%; 
+    transform: translateY(-7%);
   }
 }
+
 
 
 
