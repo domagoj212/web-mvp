@@ -321,9 +321,9 @@ footer {
 .small-iframe iframe {
   position: absolute;
   top: -5%;      /* keep top as is */
-  left: -3%;     /* crop ~3% from left/right */
+  left: -5%;     /* crop ~3% from left/right */
   width: 106%;   /* crop ~6% total from sides */
-  height: 116%;  /* crop ~6% extra from bottom */
+  height: 122%;  /* crop ~6% extra from bottom */
   border: none;
   display: block;
   background-color: #0b0f16;
