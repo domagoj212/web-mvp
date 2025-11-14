@@ -320,10 +320,10 @@ footer {
 
 .small-iframe iframe {
   position: absolute;
-  top: -5%;      /* same as large iframe */
+  top: -0.5%;      /* same as large iframe */
   left: 0;
-  width: 100%;
-  height: 110%;  /* same as large iframe */
+  width: 110%;
+  height: 120%;  /* same as large iframe */
   border: none;
   display: block;
   background-color: #0b0f16;
