@@ -364,6 +364,18 @@ footer {
   }
 }
 
+.iframe-box.no-crop {
+  transform: none !important;
+  overflow: visible !important;
+  height: auto !important;
+}
+
+.iframe-box.no-crop img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 
 
