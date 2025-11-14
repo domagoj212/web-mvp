@@ -95,36 +95,7 @@ iframeBoxes.forEach(box => {
 });
 
 
-// Get overlay elements
-const overlay = document.getElementById('iframe-overlay');
-const overlayIframe = overlay.querySelector('iframe');
-const overlayDesc = overlay.querySelector('.iframe-desc');
-const overlayBg = overlay.querySelector('.overlay-background');
 
-// Function to open overlay
-function openIframeOverlay(src, desc) {
-  overlay.style.display = 'flex';
-  overlayIframe.src = src;
-  overlayDesc.textContent = desc;
-}
-
-// Function to close overlay
-function closeIframeOverlay() {
-  overlay.style.display = 'none';
-  overlayIframe.src = '';
-}
-
-// Add click event to small iframes
-document.querySelectorAll('.small-iframe iframe').forEach(iframe => {
-  iframe.addEventListener('mouseenter', (e) => {
-    const src = iframe.src;
-    const desc = iframe.closest('.iframe-card').querySelector('.iframe-desc').textContent;
-    openIframeOverlay(src, desc);
-  });
-});
-
-// Close overlay when background is clicked
-overlayBg.addEventListener('click', closeIframeOverlay);
 
 
 
