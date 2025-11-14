@@ -320,10 +320,11 @@ footer {
 
 .small-iframe iframe {
   position: absolute;
-  top: -5%;      /* keep top as is */
-  left: -5%;     /* crop ~3% from left/right */
-  width: 106%;   /* crop ~6% total from sides */
-  height: 122%;  /* crop ~6% extra from bottom */
+  top: -5%;         /* keep top cropping as before */
+  left: 50%;        /* start from center */
+  width: 106%;      /* slightly wider for side crop */
+  height: 122%;     /* slightly taller for bottom crop */
+  transform: translateX(-50%) translateY(0); /* center horizontally */
   border: none;
   display: block;
   background-color: #0b0f16;
@@ -332,8 +333,9 @@ footer {
 
 /* Hover zoom */
 .small-iframe:hover iframe {
-  transform: translateY(-5%) scale(1.05); /* hover zoom still works */
+  transform: translateX(-50%) translateY(0) scale(1.05);
 }
+
 
 
 
