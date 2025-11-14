@@ -307,24 +307,39 @@ footer {
 }
 
 .small-iframe {
+  position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; 
+  aspect-ratio: 16 / 9;
+  background: rgba(15, 20, 26, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(88, 166, 255, 0.08) inset;
   overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .small-iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 110%;
   transform: translateY(-5%);
   border: none;
   display: block;
   background-color: #0b0f16;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Hover zoom effect */
+/* Hover Zoom Effect */
+.small-iframe:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.55), 0 0 20px rgba(88, 166, 255, 0.1) inset;
+  cursor: pointer;
+}
+
 .small-iframe:hover iframe {
-  transform: scale(1.3) translateY(-5%);
+  transform: translateY(-5%);
 }
 
 /* Description text under iframe */
@@ -341,7 +356,19 @@ footer {
   .iframe-card {
     width: 100%; /* stack on tablets */
   }
+  .small-iframe iframe {
+    height: 112%;
+    transform: translateY(-6%);
+  }
 }
+
+@media (max-width: 600px) {
+  .small-iframe iframe {
+    height: 115%;
+    transform: translateY(-7%);
+  }
+}
+
 
 
 
