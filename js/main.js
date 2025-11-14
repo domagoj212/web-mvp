@@ -90,9 +90,24 @@ iframeBoxes.forEach(box => {
   // Trigger timer on hover
   box.addEventListener('mouseenter', startTimer);
 
+
+  
+
   // Optional: clear timer if mouse leaves before 5s
   box.addEventListener('mouseleave', () => clearTimeout(timer));
 });
+
+
+<script>
+function openModal() {
+  document.getElementById("infoModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("infoModal").style.display = "none";
+}
+</script>
+
 
 
 
