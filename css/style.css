@@ -320,26 +320,22 @@ footer {
 
 .small-iframe iframe {
   position: absolute;
-  top: -0.5%;      /* same as large iframe */
-  left: 0;
-  width: 110%;
-  height: 120%;  /* same as large iframe */
+  top: -5%;      /* keep top as is */
+  left: -3%;     /* crop ~3% from left/right */
+  width: 106%;   /* crop ~6% total from sides */
+  height: 116%;  /* crop ~6% extra from bottom */
   border: none;
   display: block;
   background-color: #0b0f16;
   transition: transform 0.4s ease;
 }
 
-/* Hover Zoom Effect */
-.small-iframe:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px rgba(0,0,0,0.55), 0 0 20px rgba(88,166,255,0.1) inset;
-  cursor: pointer;
+/* Hover zoom */
+.small-iframe:hover iframe {
+  transform: translateY(-5%) scale(1.05); /* hover zoom still works */
 }
 
-.small-iframe:hover iframe {
-  transform: translateY(-5%);
-}
+
 
 /* Description text under iframe */
 .iframe-desc {
