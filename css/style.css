@@ -290,26 +290,31 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* --- Small Iframes Grid --- */
+/* --- Small Iframes Grid (2 per row) --- */
 .grid-small {
   display: flex;
-  gap: 20px;
-  justify-content: center;
   flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.iframe-card {
+  width: 48%; /* 2 per row */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
 .small-iframe {
-  width: 32%; /* 3 side by side with gap */
-  max-width: 500px; /* optional: prevent them from growing too much */
-  aspect-ratio: 16 / 9; /* same as full-size iframe */
+  width: 100%;
+  aspect-ratio: 16 / 9; 
   overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Keep iframe cropping consistent */
 .small-iframe iframe {
   width: 100%;
-  height: 110%; /* extra vertical area to hide ribbon */
+  height: 110%;
   transform: translateY(-5%);
   border: none;
   display: block;
@@ -319,20 +324,22 @@ footer {
 
 /* Hover zoom effect */
 .small-iframe:hover iframe {
-  transform: scale(1.3) translateY(-5%); /* zoom similar to full iframe */
+  transform: scale(1.3) translateY(-5%);
+}
+
+/* Description text under iframe */
+.iframe-desc {
+  margin-top: 10px;
+  color: #ccc;
+  text-align: center;
+  font-size: 0.95em;
+  max-width: 90%;
 }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .small-iframe {
-    width: 48%; /* two per row on tablets */
-  }
-}
-
-@media (max-width: 600px) {
-  .small-iframe {
-    width: 100%; /* stack vertically on mobile */
-    margin-bottom: 20px;
+  .iframe-card {
+    width: 100%; /* stack on tablets */
   }
 }
 
