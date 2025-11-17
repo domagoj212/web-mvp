@@ -489,6 +489,7 @@ footer {
 
 .contact-form-section input,
 .contact-form-section select,
+.contact-form-section textarea,
 .contact-form-section button {
   padding: 12px 15px;
   border-radius: 8px;
@@ -499,14 +500,29 @@ footer {
   transition: 0.3s;
 }
 
+/* Fokus za sve elemente */
 .contact-form-section input:focus,
-.contact-form-section select:focus {
+.contact-form-section select:focus,
+.contact-form-section textarea:focus {
   outline: none;
   border-color: #00c6ff;
   box-shadow: 0 0 10px rgba(0,198,255,0.4);
   background: rgba(255,255,255,0.08);
 }
 
+/* Posebno za textarea */
+.contact-form-section textarea {
+  resize: vertical; /* korisnik može mijenjati visinu */
+  min-height: 80px; /* početna visina */
+}
+
+/* Select dropdown opcije */
+.contact-form-section select option {
+  background: #12161e; /* tamna pozadina */
+  color: #fff;         /* bijeli tekst */
+}
+
+/* Button */
 .contact-form-section button {
   background: linear-gradient(90deg, #007bff, #00c6ff);
   color: #fff;
@@ -546,20 +562,6 @@ footer {
   padding: 0 25px;
 }
 
-/* --- Postojeći CSS ovdje ... --- */
-
-/* --- Kontakt Forma Accordion --- */
-/* (tvoj prethodni accordion CSS) */
-.contact-form-section {
-  background: rgba(15, 20, 26, 0.85);
-  padding: 40px 25px;
-  border-radius: 12px;
-  border: 1px solid rgba(88, 166, 255, 0.25);
-  box-shadow: 0 0 25px rgba(0,0,0,0.5), 0 0 15px rgba(88,166,255,0.08) inset;
-  backdrop-filter: blur(8px);
-  max-width: 700px;
-  margin: 30px auto 0 auto;
-  transition
 
 
 
