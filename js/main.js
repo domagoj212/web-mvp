@@ -104,17 +104,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Otvori formu kad se klikne gumb CTA
-document.querySelector('.cta[href*="sales@conergo.onmicrosoft.com"]').addEventListener('click', function(e) {
-  e.preventDefault(); // spriječi mailto
-  const formSection = document.getElementById('contactFormSection');
-  formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
-  formSection.scrollIntoView({ behavior: 'smooth' });
+const form = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault(); // spriječi standardno submitanje
+
+  const formData = new FormData(form);
+
+  fetch('https://formspree.io/f/managqak', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      formMessage.innerText = "Hvala, vaša poruka je poslana!";
+      form.reset();
+    } else {
+      formMessage.innerText = "Ups! Došlo je do greške, pokušajte ponovno.";
+    }
+  }).catch(error => {
+    formMessage.innerText = "Ups! Došlo je do greške, pokušajte ponovno.";
+  });
 });
 
-// Prikaz polja tvrtke samo ako je pravna osoba
-function toggleCompany() {
-  const type = document.getElementById('personType').value;
-  document.getElementById('companyField').style.display = type === 'pravna' ? 'block' : 'none';
-}
 
