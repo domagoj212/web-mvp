@@ -197,18 +197,18 @@
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- CTA Sekcija -->
 <section class="container">
   <h2>Zainteresirani?</h2>
   <p>Pošaljite nam email ili zakažite demo razgovor.</p>
   <div style="text-align:center;">
-    <a class="cta" href="mailto:sales@conergo.onmicrosoft.com">Kontaktiraj nas</a>
+    <a class="cta" href="#" id="openContactForm">Kontaktiraj nas</a>
   </div>
 
   <!-- Skriveni kontakt form accordion -->
   <section id="contactFormSection" class="container contact-form-section" style="display:none; margin-top:30px;">
     <h2>Kontaktirajte nas</h2>
-    <form action="https://formspree.io/f/managqak" method="POST">
+    <form id="contactForm">
       
       <label for="fullName">Ime i prezime*</label>
       <input type="text" id="fullName" name="fullName" required>
@@ -236,8 +236,81 @@
 
       <button type="submit">Pošalji</button>
     </form>
+    <div id="formMessage" style="margin-top:15px;"></div>
   </section>
 </section>
+
+<!-- Popup Modal -->
+<div id="infoModal" class="modal-overlay">
+  <div class="modal-box">
+    <h2>Interesira vas više?</h2>
+    <p>Pošaljite upit</p>
+
+    <div class="modal-buttons">
+      <a href="mailto:your@email.com" class="btn-primary">
+        Pošalji email
+      </a>
+      <button class="btn-secondary" onclick="closeModal()">
+        Ne sada
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- JS: Toggle accordion + AJAX submit + polje tvrtke -->
+<script>
+  // Otvori / zatvori kontakt form accordion
+  document.getElementById('openContactForm').addEventListener('click', function(e) {
+    e.preventDefault();
+    const formSection = document.getElementById('contactFormSection');
+    formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
+    formSection.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Prikaz polja tvrtke samo ako je pravna osoba
+  function toggleCompany() {
+    const type = document.getElementById('personType').value;
+    document.getElementById('companyField').style.display = type === 'pravna' ? 'block' : 'none';
+  }
+
+  // AJAX submit forme prema Formspree
+  const form = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch('https://formspree.io/f/managqak', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        formMessage.innerText = "Hvala, vaša poruka je poslana!";
+        form.reset();
+        document.getElementById('companyField').style.display = 'none';
+      } else {
+        formMessage.innerText = "Ups! Došlo je do greške, pokušajte ponovno.";
+      }
+    }).catch(error => {
+      formMessage.innerText = "Ups! Došlo je do greške, pokušajte ponovno.";
+    });
+  });
+
+  // Modal funkcije
+  function closeModal() {
+    document.getElementById('infoModal').style.display = 'none';
+  }
+
+  function openModal() {
+    document.getElementById('infoModal').style.display = 'block';
+  }
+</script>
+
 
 
 
@@ -267,6 +340,7 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
 
 
 
