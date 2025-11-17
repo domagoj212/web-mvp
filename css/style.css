@@ -461,6 +461,93 @@ footer {
   font-weight: 600;
 }
 
+/* --- Kontakt Forma Accordion --- */
+.contact-form-section {
+  background: rgba(15, 20, 26, 0.85);
+  padding: 40px 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  box-shadow: 0 0 25px rgba(0,0,0,0.5), 0 0 15px rgba(88,166,255,0.08) inset;
+  backdrop-filter: blur(8px);
+  max-width: 700px;
+  margin: 30px auto 0 auto;
+  transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+  overflow: hidden;
+}
+
+/* Form Elements */
+.contact-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form-section label {
+  color: #9ba3af;
+  font-weight: 600;
+}
+
+.contact-form-section input,
+.contact-form-section select,
+.contact-form-section button {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(88,166,255,0.25);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+.contact-form-section input:focus,
+.contact-form-section select:focus {
+  outline: none;
+  border-color: #00c6ff;
+  box-shadow: 0 0 10px rgba(0,198,255,0.4);
+  background: rgba(255,255,255,0.08);
+}
+
+.contact-form-section button {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 0 15px rgba(0,198,255,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-form-section button:hover {
+  background: linear-gradient(90deg, #00c6ff, #007bff);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(0,198,255,0.6);
+}
+
+/* Poruka nakon slanja */
+#formMessage {
+  color: #58a6ff;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Smooth slide-down effect (JS kontrolira display) */
+.contact-form-section.show {
+  display: block; /* koristi JS za toggle */
+  opacity: 1;
+  max-height: 1000px; /* dovoljno visoko da pokrije formu */
+  padding: 40px 25px;
+}
+
+.contact-form-section.hide {
+  opacity: 0;
+  max-height: 0;
+  padding: 0 25px;
+}
+
+
+
 
 
 
