@@ -405,13 +405,15 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0,0,0,0.65);
-  display: none;
-  justify-content: center;
-  align-items: center;
+  display: flex;              /* ovo mora biti flex */
+  justify-content: center;    /* centriranje horizontalno */
+  align-items: center;        /* centriranje vertikalno */
   z-index: 9999;
+  padding: 0;                 /* ukloni padding koji pomiče popup */
+  box-sizing: border-box;
 }
 
 /* MODAL BOX */
@@ -423,7 +425,9 @@ footer {
   border-radius: 12px;
   width: 320px;
   text-align: center;
+  max-width: 90vw;            /* da bude responzivno na malim ekranima */
 }
+
 
 .modal-box h2 {
   color: #fff;
