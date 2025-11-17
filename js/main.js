@@ -103,3 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// Otvori formu kad se klikne gumb CTA
+document.querySelector('.cta[href*="sales@conergo.onmicrosoft.com"]').addEventListener('click', function(e) {
+  e.preventDefault(); // spriječi mailto
+  const formSection = document.getElementById('contactFormSection');
+  formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
+  formSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Prikaz polja tvrtke samo ako je pravna osoba
+function toggleCompany() {
+  const type = document.getElementById('personType').value;
+  document.getElementById('companyField').style.display = type === 'pravna' ? 'block' : 'none';
+}
+
