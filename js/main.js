@@ -3,12 +3,12 @@
 ---------------------------------------------------- */
 function openModal() {
   const modal = document.getElementById("infoModal");
-  if (modal) modal.style.display = "flex";
+  if (modal) modal.classList.add('show');
 }
 
 function closeModal() {
   const modal = document.getElementById("infoModal");
-  if (modal) modal.style.display = "none";
+  if (modal) modal.classList.remove('show');
 }
 
 
