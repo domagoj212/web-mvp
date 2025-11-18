@@ -6,42 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Preglednik javne nabave</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Osnovni CSS za modal */
-    #infoModal {
-      display: none; /* skriven po defaultu */
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-      background: rgba(0,0,0,0.5);
-      z-index: 9999;
-    }
-    .modal-box {
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-    .modal-buttons {
-      margin-top: 20px;
-      display: flex;
-      justify-content: space-around;
-    }
-    .btn-primary, .btn-secondary {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .btn-primary { background: #58A6FF; color: #000; }
-    .btn-secondary { background: #ccc; color: #000; }
-  </style>
 </head>
 <body>
 
@@ -53,92 +17,166 @@
   </section>
 
   <!-- Case Study / Example -->
-  <section class="container">
-    <h2>Alat za sve</h2>
-    <div class="grid">
-      <div>
-        <h3>Mogućnosti</h3>
-        <div class="features">
-          <p>• Pregled svih podataka o javnim nabavama</p>
-          <p>• Responzivne vizualizacije i analitike</p>
-          <p>• Analize tržišta</p>
-        </div>
-      </div>
-      <div>
-        <h3>Industrije</h3>
-        <div class="features">
-          <p>• Građevinarstvo</p>
-          <p>• Medicinska industrija</p>
-          <p>• Strojarstvo i strojarska oprema</p>
-          <p>• Turizam</p>
-          <p>• Ostalo</p>
-        </div>
+<section class="container">
+  <h2>Alat za sve</h2>
+  <div class="grid">
+    <div>
+      <h3>Mogućnosti</h3>
+      <div class="features">
+        <p>• Pregled svih podataka o javnim nabavama</p>
+        <p>• Responzivne vizualizacije i analitike</p>
+        <p>• Analize tržišta</p>
       </div>
     </div>
-  </section>
 
-  <!-- Iframe sections -->
+    <div>
+      <h3>Industrije</h3>
+      <div class="features">
+        <p>• Građevinarstvo</p>
+        <p>• Medicinska industrija</p>
+        <p>• Strojarstvo i strojarska oprema</p>
+        <p>• Turizam</p>
+        <p>• Ostalo</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Iframe section -->
   <section class="container alt">
     <h2>Demo alata</h2>
     <h3>Javna nabava u Hrvatskoj*</h3>
+
     <div class="iframe-wrap">
       <div class="iframe-box">
-        <iframe src="https://app.powerbi.com/view?r=..." title="Demo iframe" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" allowfullscreen></iframe>
+        <iframe
+          src="https://app.powerbi.com/view?r=eyJrIjoiZGFkZmQ1YTQtYTVhNi00Yzg1LWEyNjgtYTFjMTRjOWZmYjNjIiwidCI6IjEwODY3YzMxLWQ5NDYtNDYyNS04OGE0LWUzNTlkYTFiYTIxZiIsImMiOjl9&pageName=002cc4408ddf19f63fe6"
+          title="Demo iframe"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   </section>
 
+
+  <!-- Iframe section -->
   <section class="container alt">
     <h3>Osnovni pregled ugovora</h3>
+
     <div class="iframe-wrap">
       <div class="iframe-box">
-        <iframe src="https://app.powerbi.com/view?r=..." title="Demo iframe" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" allowfullscreen></iframe>
+        <iframe
+          src="https://app.powerbi.com/view?r=eyJrIjoiZGFkZmQ1YTQtYTVhNi00Yzg1LWEyNjgtYTFjMTRjOWZmYjNjIiwidCI6IjEwODY3YzMxLWQ5NDYtNDYyNS04OGE0LWUzNTlkYTFiYTIxZiIsImMiOjl9&pageName=700583317c0b47f948ca"
+          title="Demo iframe"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   </section>
 
   <!-- Smaller Iframes Section -->
-  <section class="container alt">
-    <h3>6+ dodatnih modula i analiza</h3>
-    <div class="grid-small">
-      <div class="iframe-card">
-        <div class="iframe-box small-iframe">
-          <iframe src="https://app.powerbi.com/view?r=..." title="Segment 1" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" allowfullscreen></iframe>
-        </div>
-        <p class="iframe-desc">Modul osnovni pregled tržišta.</p>
-      </div>
+<section class="container alt">
+  <h3>6+ dodatnih modula i analiza</h3>
 
-      <div class="iframe-card">
-        <div class="iframe-box no-crop">
-          <img src="Izrezakblr.JPG" alt="Segment 2">
-        </div>
-        <p class="iframe-desc">Modul detaljna analitika prema industriji</p>
+  <div class="grid-small">
+    <div class="iframe-card">
+      <div class="iframe-box small-iframe">
+        <iframe
+          src="https://app.powerbi.com/view?r=eyJrIjoiZGFkZmQ1YTQtYTVhNi00Yzg1LWEyNjgtYTFjMTRjOWZmYjNjIiwidCI6IjEwODY3YzMxLWQ5NDYtNDYyNS04OGE0LWUzNTlkYTFiYTIxZiIsImMiOjl9&pageName=700583317c0b47f948ca"
+          title="Segment 1"
+          sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+          allowfullscreen
+        ></iframe>
       </div>
-
-      <div class="iframe-card">
-        <div class="iframe-box no-crop">
-          <img src="3blr.JPG" alt="Segment 3">
-        </div>
-        <p class="iframe-desc">Modul Analiza Ponuda.</p>
-      </div>
-
-      <div class="iframe-card">
-        <div class="iframe-box no-crop">
-          <img src="4blr.JPG" alt="Segment 4">
-        </div>
-        <p class="iframe-desc">Modul Planovi Nabave</p>
-      </div>
+      <p class="iframe-desc">Modul osnovni pregled tržišta.</p>
     </div>
-  </section>
+
+    <div class="iframe-card">
+      <div class="iframe-box no-crop" onclick="openModal()">
+        <img src="Izrezakblr.JPG" alt="Segment 2">
+      </div>
+      <p class="iframe-desc">Modul detaljna analitika prema industriji</p>
+    </div>
+
+
+
+
+    <div class="iframe-card">
+      <div class="iframe-box no-crop" onclick="openModal()">
+        <img src="3blr.JPG" alt="Segment 3">
+      </div>
+      <p class="iframe-desc">Modul Analiza Ponuda.</p>
+    </div>
+
+    <div class="iframe-card">
+      <div class="iframe-box no-crop" onclick="openModal()">
+        <img src="4blr.JPG" alt="Segment 4">
+      </div>
+      <p class="iframe-desc">Modul Planovi Nabave</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+ 
 
   <!-- Pricing Section -->
-  <section class="container alt">
-    <h2>Odaberi svoju pretplatu</h2>
-    <p style="text-align:center; margin-bottom:40px;">Tri jednostavne opcije koje pokrivaju sve potrebe</p>
-    <div class="grid">
-      <!-- Kartice... -->
+<section class="container alt">
+  <h2>Odaberi svoju pretplatu</h2>
+  <p style="text-align:center; margin-bottom:40px;">Tri jednostavne opcije koje pokrivaju sve potrebe</p>
+
+  <div class="grid">
+    <!-- Kartica 1 -->
+    <div class="pricing-card">
+      <h3>Osnovna</h3>
+      <p>Idealno za male timove i testiranje proizvoda.</p>
+      <p class="price">€xx / mjesečno</p>
+      <ul>
+        <li>Do 3 korisnika</li>
+        <li>Prikaz jedne industrije ili lokalne samouprave</li>
+        <li>Osnovne analize i prikazi</li>
+      </ul>
+      <a class="cta" href="mailto:kontakt@tvojafirma.com">Odaberi</a>
     </div>
-  </section>
+
+    <!-- Kartica 2 -->
+    <div class="pricing-card featured">
+      <h3>Pro</h3>
+      <p>Za ozbiljnije timove i veći opseg rada.</p>
+      <p class="price">€xx / mjesečno</p>
+      <ul>
+        <li>Potpuni i prošireni prikaz prema industriji</li>
+        <li>Do 7 korisnika</li>
+        <li>Naprednije analitike i izvještaji</li>
+        <li>Mogućnosti obavijesti i alertova</li>
+      </ul>
+      <a class="cta" href="mailto:kontakt@tvojafirma.com">Odaberi</a>
+    </div>
+
+    <!-- Kartica 3 -->
+    <div class="pricing-card">
+      <h3>Premium</h3>
+      <p>Enterprise rješenja</p>
+      <p class="price">od xx € mjesečno</p>
+      <ul>
+        <li>Do neograničenog broja korisnika</li>
+        <li>Funkcionalnosti i alat tailor made</li>
+        <li>Napredne analitike</li>
+        <li>AI predikcije i analize</li>
+      </ul>
+      <a class="cta" href="mailto:kontakt@tvojafirma.com">Odaberi</a>
+    </div>
+  </div>
+</section>
+
+
+  
+  
 
   <!-- Features -->
   <section class="container">
@@ -159,31 +197,187 @@
     </div>
   </section>
 
-  <!-- CTA Sekcija i kontakt forma -->
-  <section class="container">
-    <h2>Zainteresirani?</h2>
-    <div style="text-align:center;">
-      <a class="cta" href="#" id="openContactForm">Kontaktiraj nas</a>
-    </div>
-
-    <section id="contactFormSection" class="container contact-form-section" style="display:none; margin-top:30px;">
-      <!-- Forma... -->
-    </section>
-  </section>
-
-  <!-- Popup Modal -->
-  <div id="infoModal" class="modal-overlay">
-    <div class="modal-box">
-      <h2>Interesira vas više?</h2>
-      <p>Pošaljite upit</p>
-      <div class="modal-buttons">
-        <a href="mailto:your@email.com" class="btn-primary">Pošalji email</a>
-        <button class="btn-secondary" onclick="closeModal()">Ne sada</button>
-      </div>
-    </div>
+  <!-- CTA Sekcija -->
+<section class="container">
+  <h2>Zainteresirani?</h2>
+  <div style="text-align:center;">
+    <a class="cta" href="#" id="openContactForm">Kontaktiraj nas</a>
   </div>
 
-  <!-- JS -->
+  <!-- Skriveni kontakt form accordion -->
+  <section id="contactFormSection" class="container contact-form-section" style="display:none; margin-top:30px;">
+    <h2>Pošaljite upit</h2>
+    <form id="contactForm">
+      
+      <label for="fullName">Ime i prezime*</label>
+      <input type="text" id="fullName" name="fullName" required>
+
+      <label for="email">Email*</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Kontakt telefon</label>
+      <input type="tel" id="phone" name="phone">
+
+      <label for="personType">Fizička ili pravna osoba*</label>
+      <select id="personType" name="personType" required onchange="toggleCompany()">
+        <option value="">Odaberi</option>
+        <option value="privatna">Privatna osoba</option>
+        <option value="pravna">Pravna osoba</option>
+      </select>
+
+      <div id="companyField" style="display:none;">
+        <label for="companyName">Ime tvrtke</label>
+        <input type="text" id="companyName" name="companyName">
+      </div>
+
+      <label for="industry">Industrija / djelatnost</label>
+      <input type="text" id="industry" name="industry">
+
+      <label for="notes">Poruka / napomene</label>
+      <textarea id="notes" name="notes" rows="4" placeholder="Upišite upit/napomene ovdje..."></textarea>
+
+
+      <button type="submit">Pošalji</button>
+    </form>
+    <div id="formMessage" style="margin-top:15px;"></div>
+  </section>
+</section>
+
+<!-- Popup Modal -->
+<div id="infoModal" class="modal-overlay">
+  <div class="modal-box">
+    <h2>Interesira vas više?</h2>
+    <p>Pošaljite upit</p>
+
+    <div class="modal-buttons">
+      <a href="mailto:your@email.com" class="btn-primary">
+        Pošalji email
+      </a>
+      <button class="btn-secondary" onclick="closeModal()">
+        Ne sada
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- JS: Toggle accordion + AJAX submit + polje tvrtke -->
+<script>
+  // Otvori / zatvori kontakt form accordion
+  document.getElementById('openContactForm').addEventListener('click', function(e) {
+    e.preventDefault();
+    const formSection = document.getElementById('contactFormSection');
+    formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
+    formSection.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Prikaz polja tvrtke samo ako je pravna osoba
+  function toggleCompany() {
+    const type = document.getElementById('personType').value;
+    document.getElementById('companyField').style.display = type === 'pravna' ? 'block' : 'none';
+  }
+
+  // AJAX submit forme prema Formspree
+  const form = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch('https://formspree.io/f/managqak', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        formMessage.innerText = "Hvala, vaša poruka je poslana!";
+        form.reset();
+        document.getElementById('companyField').style.display = 'none';
+      } else {
+        formMessage.innerText = "Ups! Došlo je do greške, pokušajte ponovno.";
+      }
+    }).catch(error => {
+      formMessage.innerText = "Ups! Došlo je do greške, pokušajte ponovno.";
+    });
+  });
+
+  // Modal funkcije
+  function closeModal() {
+    document.getElementById('infoModal').style.display = 'none';
+  }
+
+  function openModal() {
+    document.getElementById('infoModal').style.display = 'block';
+  }
+</script>
+
+
+
+
+  <!-- Popup Modal -->
+<div id="infoModal" class="modal-overlay">
+  <div class="modal-box">
+    <h2>Interesira vas više?</h2>
+    <p>Pošaljite upit</p>
+
+    <div class="modal-buttons">
+      <a href="mailto:your@email.com" class="btn-primary">
+        Pošalji email
+      </a>
+      <button class="btn-secondary" onclick="closeModal()">
+        Ne sada
+      </button>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Ime Proizvoda | Sva prava zadržana
+  </footer>
+
   <script src="js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
