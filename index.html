@@ -218,7 +218,7 @@
       <label for="phone">Kontakt telefon</label>
       <input type="tel" id="phone" name="phone">
 
-      <label for="personType">Fizička ili pravna osoba*</label>
+      <label for="personType">Vrsta osobe*</label>
       <select id="personType" name="personType" required onchange="toggleCompany()">
         <option value="">Odaberi</option>
         <option value="privatna">Privatna osoba</option>
@@ -233,9 +233,8 @@
       <label for="industry">Industrija / djelatnost</label>
       <input type="text" id="industry" name="industry">
 
-      <label for="notes">Poruka / napomene</label>
-      <textarea id="notes" name="notes" rows="4" placeholder="Upišite upit/napomene ovdje..."></textarea>
-
+      <label for="notes">Poruka/napomene</label>
+      <input type="text" id="industry" name="industry">
 
       <button type="submit">Pošalji</button>
     </form>
@@ -243,7 +242,22 @@
   </section>
 </section>
 
+<!-- Popup Modal -->
+<div id="infoModal" class="modal-overlay">
+  <div class="modal-box">
+    <h2>Interesira vas više?</h2>
+    <p>Pošaljite upit</p>
 
+    <div class="modal-buttons">
+      <a href="mailto:your@email.com" class="btn-primary">
+        Pošalji email
+      </a>
+      <button class="btn-secondary" onclick="closeModal()">
+        Ne sada
+      </button>
+    </div>
+  </div>
+</div>
 
 <!-- JS: Toggle accordion + AJAX submit + polje tvrtke -->
 <script>
@@ -289,7 +303,35 @@
     });
   });
 
-  
+  // Modal funkcije
+  function closeModal() {
+    document.getElementById('infoModal').style.display = 'none';
+  }
+
+  function openModal() {
+    document.getElementById('infoModal').style.display = 'block';
+  }
+</script>
+
+
+
+
+  <!-- Popup Modal -->
+<div id="infoModal" class="modal-overlay">
+  <div class="modal-box">
+    <h2>Interesira vas više?</h2>
+    <p>Pošaljite upit</p>
+
+    <div class="modal-buttons">
+      <a href="mailto:your@email.com" class="btn-primary">
+        Pošalji email
+      </a>
+      <button class="btn-secondary" onclick="closeModal()">
+        Ne sada
+      </button>
+    </div>
+  </div>
+</div>
 
 
   <!-- Footer -->
@@ -300,10 +342,6 @@
   <script src="js/main.js"></script>
 </body>
 </html>
-
-
-
-
 
 
 
