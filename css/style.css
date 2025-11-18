@@ -408,7 +408,7 @@ footer {
   width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.65);
-  display: flex;              /* ovo mora biti flex */
+  display: none;              /* ovo mora biti flex */
   justify-content: center;    /* centriranje horizontalno */
   align-items: center;        /* centriranje vertikalno */
   z-index: 9999;
