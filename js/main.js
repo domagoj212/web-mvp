@@ -1,15 +1,13 @@
-/* ----------------------------------------------------
-   MODAL FUNCTIONS (for image cards 2,3,4)
----------------------------------------------------- */
 function openModal() {
   const modal = document.getElementById("infoModal");
-  if (modal) modal.classList.add('show');
+  modal.classList.add('show'); // dodaje fadeIn + display:flex
 }
 
 function closeModal() {
   const modal = document.getElementById("infoModal");
-  if (modal) modal.classList.remove('show');
+  modal.classList.remove('show'); // skriva modal
 }
+
 
 
 /* ----------------------------------------------------
