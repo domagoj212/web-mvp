@@ -408,13 +408,14 @@ footer {
   width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.65);
-  display: none;              /* ovo mora biti flex */
-  justify-content: center;    /* centriranje horizontalno */
-  align-items: center;        /* centriranje vertikalno */
+  display: none;              
+  justify-content: center;    
+  align-items: center;        
   z-index: 9999;
-  padding: 0;                 /* ukloni padding koji pomiče popup */
+  padding: 0;                 
   box-sizing: border-box;
 }
+
 
 /* MODAL BOX */
 .modal-box {
