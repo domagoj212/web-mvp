@@ -1,6 +1,15 @@
 /* ----------------------------------------------------
    MODAL FUNCTIONS (for image cards 2,3,4)
 ---------------------------------------------------- */
+function openModal() {
+  const modal = document.getElementById("infoModal");
+  if (modal) modal.style.display = "flex";
+}
+
+function closeModal() {
+  const modal = document.getElementById("infoModal");
+  if (modal) modal.style.display = "none";
+}
 
 
 /* ----------------------------------------------------
