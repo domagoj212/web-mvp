@@ -1,12 +1,11 @@
 function openModal() {
-  const modal = document.getElementById("infoModal");
-  modal.classList.add('show'); // dodaje fadeIn + display:flex
+  document.getElementById('infoModal').classList.add('show');
 }
 
 function closeModal() {
-  const modal = document.getElementById("infoModal");
-  modal.classList.remove('show'); // skriva modal
+  document.getElementById('infoModal').classList.remove('show');
 }
+
 
 
 
