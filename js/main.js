@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .then(async response => {
         if (response.ok) {
-          formMessage.innerText = "Hvala, vaša poruka je poslana!";
+          formMessage.innerText = "Hvala, vaša poruka je poslana! Kontaktirati ćemo Vas povratno";
           contactForm.reset();
           toggleCompanyField();
         } else {
