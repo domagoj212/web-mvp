@@ -116,4 +116,20 @@ document.querySelector('.cta[href*="sales@conergo.onmicrosoft.com"]').addEventLi
 function toggleCompany() {
   const type = document.getElementById('personType').value;
   document.getElementById('companyField').style.display = type === 'pravna' ? 'block' : 'none';
-}
+};
+
+
+<script>
+  function goToContactForm() {
+    closeModal(); // close popup
+
+    const formSection = document.getElementById('contactFormSection');
+
+    // open the hidden form
+    formSection.style.display = 'block';
+
+    // scroll to it smoothly
+    formSection.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
