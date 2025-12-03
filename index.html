@@ -248,50 +248,7 @@
     </div>
   </div>
 
-  <!-- JS -->
-  
-    // Toggle contact form accordion
-    document.getElementById('openContactForm').addEventListener('click', function(e) {
-      e.preventDefault();
-      const formSection = document.getElementById('contactFormSection');
-      formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
-      formSection.scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Toggle company field
-    function toggleCompany() {
-      const type = document.getElementById('personType').value;
-      document.getElementById('companyField').style.display = type === 'pravna' ? 'block' : 'none';
-    }
-
-    // AJAX submit
-    const form = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-
-      fetch('https://formspree.io/f/managqak', {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(response => {
-        if (response.ok) {
-          formMessage.innerText = "Hvala, vaša poruka je poslana!";
-          form.reset();
-          document.getElementById('companyField').style.display = 'none';
-        } else {
-          formMessage.innerText = "Ups! Došlo je do greške, pokušajte ponovno.";
-        }
-      })
-      .catch(() => {
-        formMessage.innerText = "Ups! Došlo je do greške, pokušajte ponovno.";
-      });
-    });
-
+ 
     
 
   <!-- Footer -->
@@ -302,6 +259,7 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
 
 
 
