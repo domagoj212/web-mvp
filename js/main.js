@@ -208,3 +208,16 @@ document.addEventListener('DOMContentLoaded', () => {
   $$('.modal-buttons .btn-primary').forEach(b => b.addEventListener('click', goToContactForm));
   $$('.modal-buttons .btn-secondary').forEach(b => b.addEventListener('click', closeModal));
 });
+
+document.getElementById('heroCTA').addEventListener('click', function(e) {
+  e.preventDefault(); // prevent default anchor behavior
+  window.scrollBy({
+    top: window.innerHeight, // scroll down by one viewport height
+    behavior: 'smooth'       // smooth scrolling
+  });
+});
+
+
+
+
+
