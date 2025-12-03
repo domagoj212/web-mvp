@@ -118,13 +118,17 @@ function toggleCompany() {
   document.getElementById('companyField').style.display = type === 'pravna' ? 'block' : 'none';
 };
 
-function goToContactForm() {
-  closeModal();
 
-  const formSection = document.getElementById('contactFormSection');
-  formSection.style.display = 'block';
-  formSection.scrollIntoView({ behavior: 'smooth' });
-}
+<script>
+  function goToContactForm() {
+    closeModal(); // close popup
 
+    const formSection = document.getElementById('contactFormSection');
 
+    // open the hidden form
+    formSection.style.display = 'block';
 
+    // scroll to it smoothly
+    formSection.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
