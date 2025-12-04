@@ -6,6 +6,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Preglednik javne nabave</title>
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Sustavno rješenje za vizualizaciju i analitiku podataka javnih natječaja u Hrvatskoj. Analize, vizualizacije i alati za donošenje odluka.">
+  <link rel="canonical" href="https://javna.eu/">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="Preglednik javne nabave">
+  <meta property="og:title" content="Preglednik javne nabave">
+  <meta property="og:description" content="Sustavno rješenje za vizualizaciju i analitiku podataka javnih natječaja u Hrvatskoj.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://javna.eu/">
+  <meta property="og:image" content="https://javna.eu/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Preglednik javne nabave">
+  <meta name="twitter:description" content="Sustavno rješenje za vizualizaciju i analitiku podataka javnih natječaja u Hrvatskoj.">
+  <meta name="twitter:image" content="https://javna.eu/og-image.png">
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Preglednik javne nabave",
+    "url": "https://javna.eu/",
+    "logo": "https://javna.eu/img.png"
+  }
+  </script>
+
+  <!-- Apply Inter and force text color to white only (do not change background) -->
+  <style>
+    :root {
+      --site-font: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    html, body {
+      font-family: var(--site-font);
+      color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      /* DO NOT change background here */
+    }
+
+    /* Ensure common elements and controls use white text; use !important to override other stylesheet colors */
+    h1,h2,h3,h4,h5,h6,p,span,li,label,small,div,
+    a, a:link, a:visited, a:hover, a:active,
+    .cta, button, input, textarea, select {
+      color: #ffffff !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -14,7 +66,7 @@
   <section class="hero">
     <h1>Preglednik javne nabave</h1>
     <p>Sustavno rješenje za vizualizaciju i analitiku podataka javnih natječaja</p>
-    <a id="heroCTA" class="cta" href="#">Saznaj više</a>
+    <a id="heroCTA" class="cta" href="#contactFormSection">Saznaj više</a>
   </section>
 
   <!-- Case Study / Example -->
@@ -54,6 +106,7 @@
     <div class="iframe-wrap">
       <div class="iframe-box">
         <iframe
+          loading="lazy"
           src="https://app.powerbi.com/view?r=eyJrIjoiZGFkZmQ1YTQtYTVhNi00Yzg1LWEyNjgtYTFjMTRjOWZmYjNjIiwidCI6IjEwODY3YzMxLWQ5NDYtNDYyNS04OGE0LWUzNTlkYTFiYTIxZiIsImMiOjl9&pageName=002cc4408ddf19f63fe6"
           title="Demo iframe"
           sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
@@ -70,6 +123,7 @@
     <div class="iframe-wrap">
       <div class="iframe-box">
         <iframe
+          loading="lazy"
           src="https://app.powerbi.com/view?r=eyJrIjoiZGFkZmQ1YTQtYTVhNi00Yzg1LWEyNjgtYTFjMTRjOWZmYjNjIiwidCI6IjEwODY3YzMxLWQ5NDYtNDYyNS04OGE0LWUzNTlkYTFiYTIxZiIsImMiOjl9&pageName=700583317c0b47f948ca"
           title="Demo iframe"
           sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
@@ -88,6 +142,7 @@
       <div class="iframe-card">
         <div class="iframe-box small-iframe">
           <iframe
+            loading="lazy"
             src="https://app.powerbi.com/view?r=eyJrIjoiZGFkZmQ1YTQtYTVhNi00Yzg1LWEyNjgtYTFjMTRjOWZmYjNjIiwidCI6IjEwODY3YzMxLWQ5NDYtNDYyNS04OGE0LWUzNTlkYTFiYTIxZiIsImMiOjl9&pageName=700583317c0b47f948ca"
             title="Segment 1"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
@@ -129,44 +184,39 @@
     <div class="grid">
 
       <div class="pricing-card">
-  <h3>Osnovna</h3>
-  <p>Idealno za male timove i testiranje proizvoda.</p>
-  <ul>
-    <li>Do 3 korisnika</li>
-    <li>Prikaz jedne industrije ili lokalne samouprave</li>
-    <li>Osnovne analize i prikazi</li>
-  </ul>
-</div>
+        <h3>Osnovna</h3>
+        <p>Idealno za male timove i testiranje proizvoda.</p>
+        <ul>
+          <li>Do 3 korisnika</li>
+          <li>Prikaz jedne industrije ili lokalne samouprave</li>
+          <li>Osnovne analize i prikazi</li>
+        </ul>
+      </div>
 
-<div class="pricing-card featured">
-  <h3>Pro</h3>
-  <p>Za ozbiljnije timove i veći opseg rada.</p>
-  <ul>
-    <li>Potpuni i prošireni prikaz prema industriji</li>
-    <li>Do 7 korisnika</li>
-    <li>Naprednije analitike i izvještaji</li>
-    <li>Mogućnosti obavijesti i alertova</li>
-  </ul>
-</div>
+      <div class="pricing-card featured">
+        <h3>Pro</h3>
+        <p>Za ozbiljnije timove i veći opseg rada.</p>
+        <ul>
+          <li>Potpuni i prošireni prikaz prema industriji</li>
+          <li>Do 7 korisnika</li>
+          <li>Naprednije analitike i izvještaji</li>
+          <li>Mogućnosti obavijesti i alertova</li>
+        </ul>
+      </div>
 
-<div class="pricing-card">
-  <h3>Premium</h3>
-  <p>Enterprise rješenja</p>
-  <ul>
-    <li>Do neograničenog broja korisnika</li>
-    <li>Funkcionalnosti i alat tailor made</li>
-    <li>Napredne analitike</li>
-    <li>AI predikcije i analize</li>
-  </ul>
-</div>
-
-
-      
+      <div class="pricing-card">
+        <h3>Premium</h3>
+        <p>Enterprise rješenja</p>
+        <ul>
+          <li>Do neograničenog broja korisnika</li>
+          <li>Funkcionalnosti i alat tailor made</li>
+          <li>Napredne analitike</li>
+          <li>AI predikcije i analize</li>
+        </ul>
+      </div>
 
     </div>
   </section>
-
-  
 
   <!-- Contact CTA -->
   <section class="container">
@@ -174,7 +224,7 @@
     <h2>Zainteresirani?</h2>
 
     <div style="text-align:center;">
-      <a class="cta" href="#" id="openContactForm">Kontaktiraj nas</a>
+      <a class="cta" href="#contactFormSection" id="openContactForm">Kontaktiraj nas</a>
     </div>
 
     <!-- Hidden contact form -->
@@ -230,9 +280,6 @@
       </div>
     </div>
   </div>
-
- 
-    
 
   <!-- Footer -->
   <footer>
