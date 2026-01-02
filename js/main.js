@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const fd = new FormData(contactForm);
 
-      fetch('https://formspree.io/f/managqak', {
+      fetch('https://formspree.io/f/mkogrgyz', {
         method: 'POST',
         body: fd,
         headers: { 'Accept': 'application/json' }
