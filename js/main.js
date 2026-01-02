@@ -207,6 +207,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Attach modal buttons that run goToContactForm / closeModal if they exist
   $$('.modal-buttons .btn-primary').forEach(b => b.addEventListener('click', goToContactForm));
   $$('.modal-buttons .btn-secondary').forEach(b => b.addEventListener('click', closeModal));
+
+  // 8) Navigation "Kontaktiraj nas" link - auto-expand contact form when clicked
+  const navKontakt = document.getElementById('navKontakt');
+  if (navKontakt && formSection) {
+    navKontakt.addEventListener('click', (e) => {
+      // Let the anchor navigate to #kontakt, then expand the form after a small delay
+      setTimeout(() => {
+        formSection.style.display = 'block';
+      }, 300);
+    });
+  }
 });
 
 document.getElementById('heroCTA').addEventListener('click', function(e) {

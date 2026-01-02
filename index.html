@@ -4,27 +4,27 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="img.png">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Preglednik javne nabave</title>
+  <title>BI Platforma za Javnu Nabavu | Business Intelligence za Tendering & Market Development</title>
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Google Inter font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Basic SEO -->
-  <meta name="description" content="Sustavno rješenje za vizualizaciju i analitiku podataka javnih natječaja u Hrvatskoj. Analize, vizualizacije i alati za donošenje odluka.">
+  <meta name="description" content="Business Intelligence platforma za market development i tendering. Advanced analytics, prediktivni modeli i real-time dashboardi za osvajanje javnih natječaja. Live demo!">
   <link rel="canonical" href="https://javna.eu/">
   <meta name="robots" content="index,follow">
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:site_name" content="Preglednik javne nabave">
-  <meta property="og:title" content="Preglednik javne nabave">
-  <meta property="og:description" content="Sustavno rješenje za vizualizaciju i analitiku podataka javnih natječaja u Hrvatskoj.">
+  <meta property="og:site_name" content="BI Platforma za Javnu Nabavu">
+  <meta property="og:title" content="Business Intelligence za Market Development i Tendering">
+  <meta property="og:description" content="Najnaprednija BI platforma za analitiku javne nabave. Predictive analytics, competitive intelligence i strategic insights za business development timove.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://javna.eu/">
   <meta property="og:image" content="https://javna.eu/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Preglednik javne nabave">
-  <meta name="twitter:description" content="Sustavno rješenje za vizualizaciju i analitiku podataka javnih natječaja u Hrvatskoj.">
+  <meta name="twitter:title" content="BI Platforma za Market Development i Tendering">
+  <meta name="twitter:description" content="Advanced BI dashboardi, predictive analytics i market intelligence za osvajanje natječaja. Live demo dostupan!">
   <meta name="twitter:image" content="https://javna.eu/og-image.png">
 
   <!-- JSON-LD: Organization -->
@@ -38,24 +38,15 @@
   }
   </script>
 
-  <!-- Apply Inter and force text color to white only (do not change background) -->
+  <!-- Apply Inter font and enable font smoothing -->
   <style>
     :root {
       --site-font: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
     html, body {
       font-family: var(--site-font);
-      color: #ffffff;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      /* DO NOT change background here */
-    }
-
-    /* Ensure common elements and controls use white text; use !important to override other stylesheet colors */
-    h1,h2,h3,h4,h5,h6,p,span,li,label,small,div,
-    a, a:link, a:visited, a:hover, a:active,
-    .cta, button, input, textarea, select {
-      color: #ffffff !important;
     }
   </style>
 
@@ -63,51 +54,79 @@
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token":"614df7dde3554b7c90e3f65b33d34cb9"}'></script>
 
+  <!-- i18n Translations -->
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
   
 </head>
 
 <body>
 
+  <!-- Fixed Navigation Bar -->
+  <nav class="fixed-nav">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#demo-alata" class="nav-link" data-i18n="nav.solution">Naše rješenje</a>
+        <a href="#pretplate" class="nav-link" data-i18n="nav.pricing">Moduli i pretplate</a>
+        <a href="#kontakt" class="nav-link" id="navKontakt" data-i18n="nav.contact">Kontaktiraj nas</a>
+      </div>
+      <div style="display:flex; align-items:center; gap:15px;">
+        <!-- Language Toggle -->
+        <div class="lang-toggle">
+          <button id="lang-hr" class="lang-btn active">HR</button>
+          <button id="lang-en" class="lang-btn">EN</button>
+        </div>
+        <a href="subp1/" class="user-login-link">
+          <svg class="user-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+            <path d="M6 21C6 17.134 8.686 14 12 14C15.314 14 18 17.134 18 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span data-i18n="nav.users">Registrirani korisnici</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Preglednik javne nabave</h1>
-    <p>Sustavno rješenje za vizualizaciju i analitiku podataka javnih natječaja</p>
-    <a id="heroCTA" class="cta" href="#contactFormSection">Saznaj više</a>
+    <h1 data-i18n="hero.title">BI platforma za javnu nabavu i analitiku natječaja</h1>
+    <p data-i18n="hero.subtitle">Najnaprednija Business Intelligence platforma za market development i tendering. Real-time podaci, prediktivna analitika i strategic insights za osvajanje natječaja.</p>
+    <a id="heroCTA" class="cta" href="#contactFormSection" data-i18n="hero.cta">Započni besplatnu demonstraciju</a>
   </section>
 
   <!-- Case Study / Example -->
   <section class="container">
-    <h2>Alat za sve</h2>
+    <h2 data-i18n="bi.title">Business Intelligence za strategiju osvajanja natječaja</h2>
 
     <div class="grid">
       <div>
-        <h3>Mogućnosti</h3>
+        <h3 data-i18n="bi.capabilities.title">BI & Analytics mogućnosti</h3>
         <div class="features">
-          <p>• Pregled svih podataka o javnim nabavama</p>
-          <p>• Responzivne vizualizacije i analitike</p>
-          <p>• Analize tržišta</p>
-          <p>• Sustavno upravljanje natječajima</p>
-          <p>• I puno više</p>
+          <p data-i18n="bi.cap1">• Napredne dashboarde i interaktivne vizualizacije podataka</p>
+          <p data-i18n="bi.cap2">• Prediktivna analitika za tendering strategiju</p>
+          <p data-i18n="bi.cap3">• Market intelligence - analiza tržišta i konkurencije</p>
+          <p data-i18n="bi.cap4">• Business development insights - nove poslovne prilike</p>
+          <p data-i18n="bi.cap5">• Real-time KPI tracking i performance metrics</p>
         </div>
       </div>
 
       <div>
-        <h3>Industrije</h3>
+        <h3 data-i18n="bi.teams.title">Za business development timove</h3>
         <div class="features">
-          <p>• Građevinarstvo</p>
-          <p>• Medicinska industrija</p>
-          <p>• Strojarstvo i strojarska oprema</p>
-          <p>• Turizam</p>
-          <p>• Ostalo</p>
+          <p data-i18n="bi.team1">• Market development - identificirajte nove tržišne segmente</p>
+          <p data-i18n="bi.team2">• Competitive intelligence - analizirajte strategije konkurenata</p>
+          <p data-i18n="bi.team3">• Tendering analytics - optimizirajte proces nadmetanja</p>
+          <p data-i18n="bi.team4">• Data-driven decision making - odluke temeljene na podacima</p>
+          <p data-i18n="bi.team5">• Strategic planning - planirajte s prediktivnim modelima</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Iframe section -->
-  <section class="container alt">
-    <h2>Demo alata</h2>
-    <h3>Javna nabava u Hrvatskoj*</h3>
+  <section id="demo-alata" class="container alt">
+    <h2 data-i18n="demo.title">Interaktivni BI dashboardi za analizu javne nabave</h2>
+    <h3 data-i18n="demo.subtitle">Testirajte platformu - live demo s real-time podacima</h3>
 
     <div class="iframe-wrap">
       <div class="iframe-box">
@@ -124,7 +143,7 @@
 
   <!-- Iframe section -->
   <section class="container alt">
-    <h3>Osnovni pregled ugovora</h3>
+    <h3 data-i18n="demo.contracts">Osnovni pregled ugovora</h3>
 
     <div class="iframe-wrap">
       <div class="iframe-box">
@@ -141,7 +160,7 @@
 
   <!-- Small modules -->
   <section class="container alt">
-    <h3>6+ dodatnih modula i analiza</h3>
+    <h3 data-i18n="demo.modules">6+ analytics modula za potpunu market intelligence</h3>
 
     <div class="grid-small">
 
@@ -155,117 +174,143 @@
             allowfullscreen>
           </iframe>
         </div>
-        <p class="iframe-desc">Modul osnovni pregled tržišta.</p>
+        <p class="iframe-desc" data-i18n="demo.module1">Market Overview Analytics - tržišne prilike i trendovi</p>
       </div>
 
       <div class="iframe-card">
         <div class="iframe-box no-crop" onclick="openModal()">
           <img src="Izrezakblr.JPG" alt="Segment 2">
         </div>
-        <p class="iframe-desc">Modul detaljna analitika prema industriji</p>
+        <p class="iframe-desc" data-i18n="demo.module2">Industry Intelligence - dubinska analiza sektora i segmenata</p>
       </div>
 
       <div class="iframe-card">
         <div class="iframe-box no-crop" onclick="openModal()">
           <img src="3blr.JPG" alt="Segment 3">
         </div>
-        <p class="iframe-desc">Modul Analiza Ponuda.</p>
+        <p class="iframe-desc" data-i18n="demo.module3">Competitive Analytics - strateška analiza ponuda i konkurenata</p>
       </div>
 
       <div class="iframe-card">
         <div class="iframe-box no-crop" onclick="openModal()">
           <img src="4blr.JPG" alt="Segment 4">
         </div>
-        <p class="iframe-desc">Modul Planovi Nabave</p>
+        <p class="iframe-desc" data-i18n="demo.module4">Predictive Planning - AI predikcije za tendering strategiju</p>
       </div>
 
     </div>
   </section>
 
   <!-- Pricing -->
-  <section class="container alt">
-    <h2>Odaberi svoju pretplatu</h2>
-    <p style="text-align:center; margin-bottom:40px;">Tri jednostavne opcije koje pokrivaju sve potrebe</p>
+  <section id="pretplate" class="container alt">
+    <h2 data-i18n="pricing.title">BI rješenja za svaku veličinu business development tima</h2>
+    <p style="text-align:center; margin-bottom:40px;" data-i18n="pricing.subtitle">Odaberite analytics paket koji odgovara vašim potrebama. Sva rješenja uključuju napredne BI dashboarde.</p>
 
     <div class="grid">
 
       <div class="pricing-card">
-        <h3>Osnovna</h3>
-        <p>Idealno za male timove i testiranje proizvoda.</p>
+        <h3 data-i18n="pricing.starter.title">Starter</h3>
+        <p data-i18n="pricing.starter.desc">Osnovni BI za početak market intelligence</p>
         <ul>
-          <li>Do 3 korisnika</li>
-          <li>Prikaz jedne industrije ili lokalne samouprave</li>
-          <li>Osnovne analize i prikazi</li>
+          <li data-i18n="pricing.starter.feat1">Do 3 korisnika</li>
+          <li data-i18n="pricing.starter.feat2">Fokus na jednu industriju ili regiju</li>
+          <li data-i18n="pricing.starter.feat3">Osnovni analytics dashboardi</li>
+          <li data-i18n="pricing.starter.feat4">Business intelligence izvještaji</li>
+          <li data-i18n-html="pricing.starter.feat5"><strong>Idealno za manje tendering timove</strong></li>
         </ul>
       </div>
 
       <div class="pricing-card featured">
-        <h3>Pro</h3>
-        <p>Za ozbiljnije timove i veći opseg rada.</p>
+        <h3 data-i18n="pricing.pro.title">Pro</h3>
+        <p data-i18n-html="pricing.pro.desc"><strong>NAJPOPULARNIJE</strong> - Advanced BI za ozbiljne business development timove</p>
         <ul>
-          <li>Potpuni i prošireni prikaz prema industriji</li>
-          <li>Do 7 korisnika</li>
-          <li>Naprednije analitike i izvještaji</li>
-          <li>Mogućnosti obavijesti i alertova</li>
+          <li data-i18n="pricing.pro.feat1">Do 7 korisnika</li>
+          <li data-i18n="pricing.pro.feat2">Potpuni BI pristup svim industrijama</li>
+          <li data-i18n="pricing.pro.feat3">Predictive analytics i AI insights</li>
+          <li data-i18n="pricing.pro.feat4">Market intelligence dashboardi</li>
+          <li data-i18n="pricing.pro.feat5">Competitive intelligence moduli</li>
+          <li data-i18n="pricing.pro.feat6">Real-time alerts i notifications</li>
+          <li data-i18n-html="pricing.pro.feat7"><strong>ROI već u prvom mjesecu</strong></li>
         </ul>
       </div>
 
       <div class="pricing-card">
-        <h3>Premium</h3>
-        <p>Enterprise rješenja</p>
+        <h3 data-i18n="pricing.enterprise.title">Enterprise</h3>
+        <p data-i18n="pricing.enterprise.desc">Custom BI & Analytics za velike korporacije</p>
         <ul>
-          <li>Do neograničenog broja korisnika</li>
-          <li>Funkcionalnosti i alat tailor made</li>
-          <li>Napredne analitike</li>
-          <li>AI predikcije i analize</li>
+          <li data-i18n="pricing.enterprise.feat1">Neograničen broj korisnika</li>
+          <li data-i18n="pricing.enterprise.feat2">Custom BI dashboardi za vašu industriju</li>
+          <li data-i18n="pricing.enterprise.feat3">Dedicirani BI analyst i account manager</li>
+          <li data-i18n="pricing.enterprise.feat4">API integracije s vašim ERP/CRM sustavima</li>
+          <li data-i18n="pricing.enterprise.feat5">Advanced predictive models i AI analytics</li>
+          <li data-i18n="pricing.enterprise.feat6">White-label opcije</li>
+          <li data-i18n-html="pricing.enterprise.feat7"><strong>Potpuna market intelligence kontrola</strong></li>
         </ul>
       </div>
 
     </div>
+
+    <div style="text-align:center; margin-top:50px;">
+      <p style="font-size:1.1em; color: var(--soft-cyan);" data-i18n-html="pricing.offer">🎯 Ograničena ponuda: Rezervirajte demo ovaj tjedan i dobijte <strong>30 dana besplatnog pristupa</strong> na osnovne module</p>
+    </div>
   </section>
 
   <!-- Contact CTA -->
-  <section class="container">
+  <section id="kontakt" class="container">
     <p></p>
-    <h2>Zainteresirani?</h2>
+    <h2 data-i18n="contact.title">Vidite kako BI može transformirati vaš tendering proces</h2>
+    <p style="text-align:center; max-width:700px; margin: 0 auto 30px; font-size:1.1em;" data-i18n="contact.desc">15-minutni live demo naših BI dashboarda pokazat će vam kako možete donijeti bolje business development odluke s data-driven insights. Personalizirana demonstracija analytics mogućnosti za vašu industriju.</p>
 
     <div style="text-align:center;">
-      <a class="cta" href="#contactFormSection" id="openContactForm">Kontaktiraj nas</a>
+      <a class="cta" href="#contactFormSection" id="openContactForm" data-i18n="contact.cta">Zakaži BI platformu demo</a>
+      <p style="margin-top:15px; color: var(--text-muted); font-size:0.9em;" data-i18n="contact.benefits">⚡ Odgovaramo u roku 2 sata | 📊 Live BI demo | 🚀 Bez obveza</p>
+      
+      <div style="margin-top:25px; padding-top:25px; border-top: 1px solid rgba(88, 166, 255, 0.15);">
+        <p style="color: var(--text-muted); font-size:0.95em; margin-bottom:12px;" data-i18n="contact.emailIntro">Ili nas kontaktirajte direktno putem emaila:</p>
+        <a href="mailto:info@kti.hr" style="display:inline-flex; align-items:center; gap:8px; color: var(--primary-blue); font-size:1.05em; font-weight:600; text-decoration:none; transition: all 0.3s ease;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+            <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          info@kti.hr
+        </a>
+      </div>
     </div>
 
     <!-- Hidden contact form -->
     <section id="contactFormSection" class="container contact-form-section" style="display:none; margin-top:30px;">
-      <h2>Pošaljite upit</h2>
+      <h2 data-i18n="form.title">Zakaži live demo BI platforme</h2>
+      <p style="text-align:center; margin-bottom:25px; color: var(--text-muted);" data-i18n="form.subtitle">Naš BI stručnjak će vam pokazati analytics mogućnosti relevantne za vašu industriju</p>
 
       <form id="contactForm">
-        <label for="fullName">Ime i prezime*</label>
-        <input type="text" id="fullName" name="fullName" required>
+        <label for="fullName" data-i18n="form.fullName">Ime i prezime*</label>
+        <input type="text" id="fullName" name="fullName" required data-i18n-placeholder="form.fullNamePh" placeholder="Vaše ime i prezime">
 
-        <label for="email">Email*</label>
-        <input type="email" id="email" name="email" required>
+        <label for="email" data-i18n="form.email">Poslovni email*</label>
+        <input type="email" id="email" name="email" required data-i18n-placeholder="form.emailPh" placeholder="vas@tvrtka.hr">
 
-        <label for="phone">Kontakt telefon</label>
-        <input type="tel" id="phone" name="phone">
+        <label for="phone" data-i18n="form.phone">Kontakt telefon*</label>
+        <input type="tel" id="phone" name="phone" required data-i18n-placeholder="form.phonePh" placeholder="+385 ...">
 
-        <label for="personType">Vrsta osobe*</label>
+        <label for="personType" data-i18n="form.personType">Vrsta osobe*</label>
         <select id="personType" name="personType" required onchange="toggleCompany()">
-          <option value="">Odaberi</option>
-          <option value="privatna">Privatna osoba</option>
-          <option value="pravna">Pravna osoba</option>
+          <option value="" data-i18n="form.personTypeSelect">Odaberi</option>
+          <option value="pravna" data-i18n="form.personTypeLegal">Pravna osoba (tvrtka)</option>
+          <option value="privatna" data-i18n="form.personTypePrivate">Privatna osoba</option>
         </select>
 
         <div id="companyField" style="display:none;">
-          <label for="companyName">Ime tvrtke</label>
-          <input type="text" id="companyName" name="companyName">
+          <label for="companyName" data-i18n="form.companyName">Naziv tvrtke*</label>
+          <input type="text" id="companyName" name="companyName" data-i18n-placeholder="form.companyNamePh" placeholder="Naziv vaše tvrtke">
         </div>
 
-        <label for="industry">Industrija / djelatnost</label>
-        <input type="text" id="industry" name="industry">
+        <label for="industry" data-i18n="form.industry">Vaša industrija / djelatnost*</label>
+        <input type="text" id="industry" name="industry" required data-i18n-placeholder="form.industryPh" placeholder="npr. Građevinarstvo, Medicina, IT...">
 
-        <label for="notes">Poruka/napomene</label>
-        <input type="text" id="notes" name="notes">
+        <label for="notes" data-i18n="form.notes">Koje BI mogućnosti vas zanimaju? (opcionalno)</label>
+        <input type="text" id="notes" name="notes" data-i18n-placeholder="form.notesPh" placeholder="Market intelligence, competitive analytics, predictive models...">
 
-        <button type="submit">Pošalji</button>
+        <button type="submit" data-i18n="form.submit">Rezerviraj demonstraciju sada</button>
+        <p style="text-align:center; margin-top:10px; font-size:0.85em; color: var(--text-dimmed);" data-i18n="form.privacy">🔒 Vaši podaci su sigurni i neće biti dijeljeni s trećim stranama</p>
       </form>
 
       <div id="formMessage" style="margin-top:15px;"></div>
@@ -275,23 +320,25 @@
   <!-- Popup Modal (single instance) -->
   <div id="infoModal" class="modal-overlay" style="display:none;">
     <div class="modal-box">
-      <h2>Interesira vas više?</h2>
-      <p>Pošaljite upit</p>
+      <h2 data-i18n="modal.title">Želite vidjeti sve mogućnosti?</h2>
+      <p data-i18n="modal.desc">Rezervirajte 15-minutnu demonstraciju i saznajte kako možete povećati stopu uspješnosti na natečajima za 40%+</p>
 
       <div class="modal-buttons">
-        <button class="btn-primary" onclick="goToContactForm()">
-          Kontaktiraj nas
+        <button class="btn-primary" onclick="goToContactForm()" data-i18n="modal.btnYes">
+          Da, želim demo
         </button>
-        <button class="btn-secondary" onclick="closeModal()">Ne sada</button>
+        <button class="btn-secondary" onclick="closeModal()" data-i18n="modal.btnLater">Možda kasnije</button>
       </div>
     </div>
   </div>
 
   <!-- Footer -->
-  <footer>
-    &copy; 2025 | Sva prava zadržana | Svi podaci prikazani na ovoj stranici su informativnog karaktera
+  <footer data-i18n="footer.text">
+    &copy; 2026 | Sva prava zadržana | Svi podaci prikazani na ovoj stranici su informativnog karaktera
   </footer>
 
+  <script src="js/translations.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

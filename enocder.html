@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <title>Offline URL encoder</title>
+</head>
+<body>
+
+<h3>Offline iframe URL encoder</h3>
+
+<input id="url" placeholder="Iframe URL" style="width:100%"><br><br>
+<input id="password" placeholder="Password"><br><br>
+
+<button onclick="encode()">Encode</button>
+
+<pre id="output"></pre>
+
+<script>
+function encode() {
+  const url = document.getElementById('url').value;
+  const pwd = document.getElementById('password').value;
+
+  const encoded = Array.from(url).map((c, i) =>
+    c.charCodeAt(0) ^ pwd.charCodeAt(i % pwd.length)
+  );
+
+  document.getElementById('output').textContent =
+    JSON.stringify(encoded);
+}
+</script>
+
+</body>
+</html>
