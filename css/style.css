@@ -22,6 +22,11 @@ html, body {
   padding: 0;
 }
 
+/* Mobile-only notice - hidden by default */
+.mobile-only-notice {
+  display: none;
+}
+
 body {
   background: 
     radial-gradient(at 15% 30%, rgba(0, 120, 255, 0.15), transparent 60%),
@@ -1031,6 +1036,36 @@ footer {
   .features p {
     font-size: 0.9em;
     padding: 0 5px;
+  }
+  
+  /* Icon grid - make it single column on mobile */
+  .icon-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    padding: 0 10px;
+  }
+  
+  .icon-grid > div {
+    max-width: 100%;
+  }
+  
+  .icon-grid svg {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  /* Show mobile-only notice */
+  .mobile-only-notice {
+    display: block !important;
+    text-align: center;
+    color: var(--soft-cyan);
+    font-size: 0.9em;
+    font-style: italic;
+    margin: 10px auto 20px;
+    padding: 10px 15px;
+    background: rgba(88, 166, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(88, 166, 255, 0.2);
   }
   
   /* Modal */
