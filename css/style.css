@@ -499,6 +499,39 @@ section p {
   margin-bottom: 30px; /* adds breathing room below headings and paragraphs */
 }
 
+/* --- Industries Section --- */
+.industries-section {
+  padding: 0 20px;
+}
+
+.industries-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.industry-item {
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  color: var(--soft-cyan);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.industry-item:hover {
+  background: rgba(88, 166, 255, 0.2);
+  border-color: rgba(88, 166, 255, 0.4);
+  transform: translateY(-2px);
+}
+
 /* --- Pricing Cards --- */
 .pricing-card {
   background: rgba(255, 255, 255, 0.05);
