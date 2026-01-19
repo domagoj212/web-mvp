@@ -11,6 +11,17 @@
   --accent-gradient: linear-gradient(135deg, #58a6ff 0%, #00d4ff 100%);
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: 
     radial-gradient(at 15% 30%, rgba(0, 120, 255, 0.15), transparent 60%),
@@ -470,9 +481,10 @@ section h3 {
   }
   
   .iframe-box iframe {
-    width: 100%;
-    height: 100%;
-    transform: translateY(0); /* Center the iframe, no cropping */
+    width: 120%; /* 10% crop left + 10% crop right = 120% width */
+    height: 108%; /* 8% crop from bottom */
+    left: -10%; /* Center horizontally (offset for the extra width) */
+    transform: translateY(0); /* No vertical shift, bottom gets cropped */
   }
 }
 
@@ -697,9 +709,10 @@ footer {
   }
   
   .small-iframe iframe { 
-    width: 100%;
-    height: 100%;
-    transform: translateY(0); /* Center the iframe, no cropping */
+    width: 120%; /* 10% crop left + 10% crop right = 120% width */
+    height: 108%; /* 8% crop from bottom */
+    left: -10%; /* Center horizontally (offset for the extra width) */
+    transform: translateY(0); /* No vertical shift, bottom gets cropped */
   }
 }
 
@@ -907,4 +920,123 @@ footer {
   opacity: 0;
   max-height: 0;
   padding: 0 25px;
+}
+
+/* --- Mobile Responsive Fixes (max-width: 600px) --- */
+@media (max-width: 600px) {
+  /* Hero section */
+  .hero {
+    padding: 0 15px;
+    height: auto;
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  
+  .hero h1 {
+    font-size: 2em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+  }
+  
+  .hero p {
+    font-size: 1em;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  
+  .cta {
+    padding: 12px 30px;
+    font-size: 0.95em;
+    width: auto;
+    max-width: 90%;
+  }
+  
+  /* Containers */
+  .container {
+    padding: 0 15px !important;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Section adjustments */
+  section {
+    padding: 60px 0;
+    overflow-x: hidden;
+  }
+  
+  section h2 {
+    font-size: 1.6em;
+    line-height: 1.3;
+    padding: 0 10px;
+  }
+  
+  section h3 {
+    font-size: 1.2em;
+    padding: 0 10px;
+  }
+  
+  /* Grid layouts */
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+    padding: 0 15px;
+  }
+  
+  .grid-small {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+    padding: 0 15px;
+  }
+  
+  /* Pricing cards */
+  .pricing-card {
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Iframe containers */
+  .iframe-wrap {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .iframe-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Forms */
+  .contact-form-section {
+    padding: 0 15px !important;
+  }
+  
+  .contact-form-section form {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .contact-form-section input,
+  .contact-form-section select,
+  .contact-form-section button {
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px; /* Prevents iOS zoom on input focus */
+  }
+  
+  /* Features */
+  .features p {
+    font-size: 0.9em;
+    padding: 0 5px;
+  }
+  
+  /* Modal */
+  .modal-box {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 5%;
+  }
 }
