@@ -8,12 +8,12 @@ const translations = {
     "nav.users": "Registrirani korisnici",
     
     // Hero Section
-    "hero.title": "Analitika i Vizualizacija Javne Nabave u Hrvatskoj",
-    "hero.subtitle": "Platforma za pregled podataka javnih natječaja, analitiku tržišta javne nabave i statistike javnih naručitelja u Hrvatskoj. Interaktivni dashboardi s real-time podacima javne nabave.",
+    "hero.title": "Sustavno rješenje za javnu nabavu",
+    "hero.subtitle": "Jedino rješenje za javnu nabavu koje trebate. Točnost. Pravovremenost. Kvaliteta.",
     "hero.cta": "Isprobaj besplatnu demonstraciju",
     
     // Business Intelligence Section
-    "bi.title": "Podaci i Analitika Javne Nabave u Hrvatskoj",
+    "bi.title": "Kompletno i sustavno rješenje za javnu nabavu",
     "bi.capabilities.title": "Mogućnosti Analize Javne Nabave",
     "bi.cap1": "• Interaktivna vizualizacija podataka javne nabave",
     "bi.cap2": "• Analitika javnih natječaja i trendova tržišta",
@@ -113,12 +113,12 @@ const translations = {
     "nav.users": "Registered Users",
     
     // Hero Section
-    "hero.title": "BI Platform for Public Procurement & Tender Analytics",
-    "hero.subtitle": "The most advanced Business Intelligence platform for market development and tendering. Real-time data, predictive analytics and strategic insights for winning tenders.",
-    "hero.cta": "Start Free Demo",
+    "hero.title": "Systematic Solution for Public Procurement",
+    "hero.subtitle": "The only public procurement solution you need. Accuracy. Timeliness. Quality.",
+    "hero.cta": "Try Free Demo",
     
     // Business Intelligence Section
-    "bi.title": "Business Intelligence for Tender Winning Strategy",
+    "bi.title": "Complete and Systematic Solution for Public Procurement",
     "bi.capabilities.title": "BI & Analytics Capabilities",
     "bi.cap1": "• Advanced dashboards and interactive data visualizations",
     "bi.cap2": "• Predictive analytics for tendering strategy",
