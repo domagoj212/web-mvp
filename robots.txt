@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap (GitHub Pages će služiti datoteku iz root-a)
 Sitemap: https://javna.eu/sitemap.xml
