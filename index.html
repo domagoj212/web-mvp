@@ -5,10 +5,21 @@
   <link rel="icon" type="image/png" href="img.png">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sustavno rješenje za javnu nabavu</title>
-  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Preconnect to speed up external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
+  <link rel="dns-prefetch" href="https://app.powerbi.com">
+  <link rel="dns-prefetch" href="https://content.powerapps.com">
+  
+  <!-- Non-blocking CSS with media print trick -->
+  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'; this.onload=null;">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
 
-  <!-- Google Inter font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Inter font with optimized display swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Basic SEO -->
   <meta name="description" content="Platforma za analitiku javne nabave u Hrvatskoj. Vizualizacija podataka javnih natječaja, tržišta javne nabave i javnih naručitelja. Pregled ugovora i statistika javne nabave.">
@@ -239,21 +250,21 @@
 
       <div class="iframe-card">
         <div class="iframe-box no-crop" onclick="openModal()">
-          <img src="Izrezakblr.JPG" alt="Segment 2">
+          <img src="Izrezakblr.JPG" alt="Segment 2" loading="lazy" width="554" height="295">
         </div>
         <p class="iframe-desc" data-i18n="demo.module2">Industry Intelligence - dubinska analiza sektora i segmenata</p>
       </div>
 
       <div class="iframe-card">
         <div class="iframe-box no-crop" onclick="openModal()">
-          <img src="3blr.JPG" alt="Segment 3">
+          <img src="3blr.JPG" alt="Segment 3" loading="lazy" width="532" height="295">
         </div>
         <p class="iframe-desc" data-i18n="demo.module3">Competitive Analytics - strateška analiza ponuda i konkurenata</p>
       </div>
 
       <div class="iframe-card">
         <div class="iframe-box no-crop" onclick="openModal()">
-          <img src="4blr.JPG" alt="Segment 4">
+          <img src="4blr.JPG" alt="Segment 4" loading="lazy" width="526" height="295">
         </div>
         <p class="iframe-desc" data-i18n="demo.module4">Predictive Planning - AI predikcije za tendering strategiju</p>
       </div>
