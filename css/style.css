@@ -671,6 +671,7 @@ footer {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  align-items: stretch; /* Ensure equal height rows */
 }
 
 .iframe-card {
@@ -678,13 +679,17 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start; /* Align content to top */
   margin-bottom: 30px;
 }
 
 .small-iframe {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9 !important;
+  min-height: unset !important; /* Override .iframe-box min-height to enforce 16:9 */
+  max-width: unset; /* Override .iframe-box max-width */
+  margin: 0; /* Override .iframe-box margin */
   background: rgba(15, 20, 26, 0.9);
   border-radius: 12px;
   border: 1px solid rgba(88, 166, 255, 0.25);
@@ -695,11 +700,11 @@ footer {
 
 .small-iframe iframe {
   position: absolute;
-  top: -5%;         /* keep top cropping as before */
-  left: 50%;        /* start from center */
-  width: 106%;      /* slightly wider for side crop */
-  height: 122%;     /* slightly taller for bottom crop */
-  transform: translateX(-50%) translateY(0); /* center horizontally */
+  top: 0;
+  left: -10%; /* Center horizontally for 10% crop each side */
+  width: 120%; /* 10% crop left + 10% crop right */
+  height: 110%; /* 10% uncrop bottom */
+  transform: translateY(10%) scale(1.17); /* 17% zoom, moved down 10% */
   border: none;
   display: block;
   background-color: #0b0f16;
@@ -708,7 +713,7 @@ footer {
 
 /* Hover zoom */
 .small-iframe:hover iframe {
-  transform: translateX(-50%) translateY(0) scale(1.02);
+  transform: translateY(10%) scale(1.19);
 }
 
 
@@ -755,7 +760,9 @@ footer {
   position: relative;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 16 / 9; /* keep same aspect ratio as other iframes */
+  aspect-ratio: 16 / 9 !important; /* keep same aspect ratio as other iframes */
+  min-height: unset !important; /* override base .iframe-box min-height */
+  margin: 0; /* override base .iframe-box margin */
   border-radius: 12px;
   border: 1px solid rgba(88, 166, 255, 0.25);
   box-shadow: 0 0 25px rgba(0,0,0,0.5), 0 0 15px rgba(88,166,255,0.08) inset;
