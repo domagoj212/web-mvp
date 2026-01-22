@@ -56,18 +56,7 @@ body::before {
     url("data:image/svg+xml,%3Csvg width='120' height='120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2358a6ff' stroke-width='1'%3E%3Cpath d='M10 60 L30 45 L50 55 L70 30 L90 40 L110 25' stroke-opacity='0.6'/%3E%3Ccircle cx='30' cy='45' r='2' fill='%2358a6ff' fill-opacity='0.6'/%3E%3Ccircle cx='50' cy='55' r='2' fill='%2358a6ff' fill-opacity='0.6'/%3E%3Ccircle cx='70' cy='30' r='2' fill='%2358a6ff' fill-opacity='0.6'/%3E%3Crect x='15' y='85' width='8' height='20' fill='%2358a6ff' fill-opacity='0.4'/%3E%3Crect x='28' y='75' width='8' height='30' fill='%2358a6ff' fill-opacity='0.4'/%3E%3Crect x='41' y='80' width='8' height='25' fill='%2358a6ff' fill-opacity='0.4'/%3E%3Crect x='54' y='70' width='8' height='35' fill='%2358a6ff' fill-opacity='0.4'/%3E%3Cpath d='M80 85 Q85 80 90 85 T100 85' stroke-opacity='0.5'/%3E%3Ccircle cx='95' cy='65' r='10' stroke-opacity='0.3'/%3E%3Cpath d='M90 65 L100 65 M95 60 L95 70' stroke-opacity='0.5'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 120px 120px;
   background-repeat: repeat;
-  animation: subtleFloat 60s ease-in-out infinite;
-}
-
-@keyframes subtleFloat {
-  0%, 100% { 
-    transform: translate(0, 0);
-    opacity: 0.04;
-  }
-  50% { 
-    transform: translate(10px, 10px);
-    opacity: 0.06;
-  }
+  will-change: transform;
 }
 
 /* Ensure content stays above pattern */
@@ -428,6 +417,7 @@ section h3 {
   width: 100%;
   max-width: 1600px;
   aspect-ratio: 16 / 9;
+  min-height: 450px;
   background: rgba(15, 20, 26, 0.9);
   border-radius: 12px;
 
@@ -441,6 +431,11 @@ section h3 {
 
   /* ✅ Smooth transition for hover effect */
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  
+  /* GPU acceleration for better performance */
+  will-change: transform;
+  transform: translateZ(0);
+  contain: layout style paint;
 
   /* Add vertical spacing between widgets */
   margin: 35px 0;
@@ -448,7 +443,7 @@ section h3 {
 
 /* ✨ Hover Zoom Effect (does not affect cropping) */
 .iframe-box:hover {
-  transform: scale(1.05); /* very subtle zoom-in */
+  transform: scale(1.05) translateZ(0); /* very subtle zoom-in with GPU acceleration */
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.55),
               0 0 20px rgba(88, 166, 255, 0.1) inset;
   cursor: pointer;
@@ -481,13 +476,14 @@ section h3 {
 
 @media (max-width: 600px) {
   .iframe-box {
-    aspect-ratio: 16 / 9; /* Keep 16:9 on mobile */
+    aspect-ratio: 16 / 9 !important; /* Force 16:9 on mobile */
+    min-height: unset !important; /* Remove min-height to enforce aspect ratio */
     margin: 20px 0;
   }
   
   .iframe-box iframe {
     width: 120%; /* 10% crop left + 10% crop right = 120% width */
-    height: 108%; /* 8% crop from bottom */
+    height: 118%; /* 18% crop from bottom (additional 10% for mobile) */
     left: -10%; /* Center horizontally (offset for the extra width) */
     transform: translateY(0); /* No vertical shift, bottom gets cropped */
   }
@@ -743,12 +739,13 @@ footer {
 
 @media (max-width: 600px) {
   .small-iframe {
-    aspect-ratio: 16 / 9; /* Keep 16:9 on mobile */
+    aspect-ratio: 16 / 9 !important; /* Force 16:9 on mobile */
+    min-height: unset !important; /* Remove min-height to enforce aspect ratio */
   }
   
   .small-iframe iframe { 
     width: 120%; /* 10% crop left + 10% crop right = 120% width */
-    height: 108%; /* 8% crop from bottom */
+    height: 118%; /* 18% crop from bottom (additional 10% for mobile) */
     left: -10%; /* Center horizontally (offset for the extra width) */
     transform: translateY(0); /* No vertical shift, bottom gets cropped */
   }
