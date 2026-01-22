@@ -482,10 +482,10 @@ section h3 {
   }
   
   .iframe-box iframe {
-    width: 120%; /* 10% crop left + 10% crop right = 120% width */
-    height: 118%; /* 18% crop from bottom (additional 10% for mobile) */
-    left: -10%; /* Center horizontally (offset for the extra width) */
-    transform: translateY(0); /* No vertical shift, bottom gets cropped */
+    width: 132%; /* 16% crop left + 16% crop right = 132% width */
+    height: 118%; /* 18% crop from bottom */
+    left: -16%; /* Center horizontally (offset for the extra width) */
+    transform: translateY(0) scale(1.10); /* 10% zoom for mobile */
   }
 }
 
@@ -744,10 +744,10 @@ footer {
   }
   
   .small-iframe iframe { 
-    width: 120%; /* 10% crop left + 10% crop right = 120% width */
-    height: 118%; /* 18% crop from bottom (additional 10% for mobile) */
-    left: -10%; /* Center horizontally (offset for the extra width) */
-    transform: translateY(0); /* No vertical shift, bottom gets cropped */
+    width: 132%; /* 16% crop left + 16% crop right = 132% width */
+    height: 118%; /* 18% crop from bottom */
+    left: -16%; /* Center horizontally (offset for the extra width) */
+    transform: translateY(0) scale(1.10); /* 10% zoom for mobile */
   }
 }
 
