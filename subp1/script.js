@@ -15,12 +15,12 @@
 
 // ⛔️ ZAMIJENI OVIM SVOJ ENKODIRANI NIZ
 const encodedIframeUrl = [
-  24,21,7,3,3,91,92,92,17,17,3,93,0,14,4,22,2,3,26,93,19,14,30,92,6,8,22,4,79,19,78,22,9,43,1,58,26,14,26,42,39,36,9,61,10,52,11,60,55,48,7,62,55,48,9,62,25,81,67,62,55,40,71,63,39,36,9,42,29,52,7,42,26,13,27,61,36,56,71,61,10,36,64,61,36,2,65,58,25,22,26,23,51,40,69,58,26,36,4,60,52,56,64,42,10,44,11,63,39,48,70,61,52,56,7,61,52,56,10,61,35,81,71,60,55,36,67,63,39,52,9,61,36,13,24,42,36,39,26,42,36,40,11,41,25,40,0,58,29,44,26,60,26,13,74
+  36,69,55,40,44,11,30,27,45,65,51,118,47,94,70,81,62,83,42,118,60,94,92,27,58,88,38,47,96,67,12,81,53,123,49,17,53,94,88,123,24,116,114,2,27,82,1,123,24,90,55,22,50,96,5,121,37,1,115,23,11,123,89,120,27,119,43,21,27,116,69,110,24,86,114,2,8,99,93,109,38,93,47,21,8,127,88,125,37,70,42,60,28,120,7,125,38,116,52,23,27,104,2,109,54,124,59,20,8,96,4,122,8,104,55,22,27,104,72,122,31,1,119,23,24,116,1,120,27,100,57,22,11,93,90,109,24,119,42,1,11,120,73,110,37,120,48,17,50,124,88,123,38,93,122
   // ... cijeli niz koji si dobio iz offline encodera
 ];
 
 // 👤 DOZVOLJENI KORISNICI
-const allowedUsernames = ['user1', 'user2', 'user3'];
+const allowedUsernames = ['user1', 'user2', 'demo_user23'];
 
 
 /***********************
@@ -96,22 +96,13 @@ document.getElementById('submitBtn').addEventListener('click', () => {
       throw new Error('Wrong password');
     }
 
-    // 🧱 Kreiramo iframe TEK SAD
-    container.innerHTML = `
-      <iframe
-        src="${decodedUrl}"
-        allowfullscreen>
-      </iframe>
-    `;
+    // Store credentials in sessionStorage for app page
+    sessionStorage.setItem('authPassword', password);
+    sessionStorage.setItem('authUsername', username);
+    sessionStorage.setItem('authTime', Date.now().toString());
 
-    // Hide modal and show content
-    modal.style.display = 'none';
-    container.style.display = 'block';
-    errorEl.textContent = '';
-    errorEl.style.color = 'red';
-
-    // Start session timeout
-    startSessionTimeout();
+    // Redirect to app page
+    window.location.href = '../app/';
 
   } catch (e) {
     container.style.display = 'none';
