@@ -309,30 +309,41 @@
       z-index: 100;
     }
 
-    /* M365 Portal Button */
+    /* M365 Portal Section */
+    .portal-link-section {
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .portal-text {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.95em;
+      margin-bottom: 15px;
+    }
+
     .portal-button {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 30px;
-      background: linear-gradient(135deg, #58a6ff 0%, #00d4ff 100%);
-      color: white;
+      padding: 10px 24px;
+      background: rgba(88, 166, 255, 0.15);
+      color: #58a6ff;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1em;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 0.9em;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
-      border: none;
+      border: 1px solid rgba(88, 166, 255, 0.3);
       cursor: pointer;
     }
 
     .portal-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(88, 166, 255, 0.4);
+      background: rgba(88, 166, 255, 0.25);
+      border-color: rgba(88, 166, 255, 0.5);
     }
 
     .portal-button:active {
-      transform: translateY(0);
+      transform: scale(0.98);
     }
 
     /* Responsive Design */
@@ -402,7 +413,6 @@
       <div class="page-header">
         <h1>Vaš dashboard</h1>
         <p>Trenutno pregledavate Demo verziju aplikacije</p>
-        <a href="https://app.powerbi.com/groups/9d7d991f-c878-4a34-b906-265725d735e4/reports/29fd5897-f304-490f-8f22-f5b875b0c4c9/e5ad9007a92bd53fc1e4?experience=power-bi" target="_blank" class="portal-button">Na M365 portal</a>
       </div>
 
       <!-- PROTECTED CONTENT -->
@@ -414,6 +424,12 @@
           <h2>Planovi nabave</h2>
           <div class="second-iframe-container" id="second-iframe-holder"></div>
         </div>
+      </div>
+      
+      <!-- M365 Portal Link -->
+      <div class="portal-link-section">
+        <p class="portal-text">Potrebna vam je puna verzija s više funkcija?</p>
+        <a href="https://app.powerbi.com/groups/9d7d991f-c878-4a34-b906-265725d735e4/reports/29fd5897-f304-490f-8f22-f5b875b0c4c9/e5ad9007a92bd53fc1e4?experience=power-bi" target="_blank" class="portal-button">Idi na M365 portal (puna verzija)</a>
       </div>
     </div>
   </div>
