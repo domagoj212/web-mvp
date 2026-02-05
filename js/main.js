@@ -28,8 +28,23 @@ function goToContactForm() {
 function toggleCompanyField() {
   const type = (document.getElementById('personType') || {}).value;
   const companyField = document.getElementById('companyField');
+  const companySizeField = document.getElementById('companySizeField');
+  const companyNameInput = document.getElementById('companyName');
+  const companySizeInput = document.getElementById('companySize');
+  
   if (!companyField) return;
-  companyField.style.display = type === 'pravna' ? 'block' : 'none';
+  
+  if (type === 'pravna') {
+    companyField.style.display = 'block';
+    if (companySizeField) companySizeField.style.display = 'block';
+    if (companyNameInput) companyNameInput.setAttribute('required', 'required');
+    if (companySizeInput) companySizeInput.setAttribute('required', 'required');
+  } else {
+    companyField.style.display = 'none';
+    if (companySizeField) companySizeField.style.display = 'none';
+    if (companyNameInput) companyNameInput.removeAttribute('required');
+    if (companySizeInput) companySizeInput.removeAttribute('required');
+  }
 }
 
 /* Build the hover overlay (single instance factory) */

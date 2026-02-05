@@ -28,18 +28,22 @@ const translations = {
     "bi.team5": "• Vizualizacija podataka i trendova javne nabave",
     
     // Demo Section
-    "demo.title": "Interaktivni dashboardi i BI izvještaji",
-    "demo.subtitle": "Uvidi u JN od 3.3.2025-24.3.2025.g.",
+    "demo.title": "Naše rješenje",
+    "demo.subtitle": "Potpuno upravljanje procesima javne nabave kroz nekoliko specijaliziranih modula",
     "demo.contracts": "Pregled Ugovora o Javnoj Nabavi u Hrvatskoj",
     "demo.modules": "Moduli za Analitiku Javne Nabave i Tržišta",
     "demo.module1": "Market Overview Analytics - tržišne prilike i trendovi",
-    "demo.module2": "Industry Intelligence - dubinska analiza sektora i segmenata",
-    "demo.module3": "Competitive Analytics - strateška analiza ponuda i konkurenata",
-    "demo.module4": "Predictive Planning - AI predikcije za tendering strategiju",
+    "demo.module2": "Upravljanje nabavama i pregledi tržišta",
+    "demo.module3": "Analize ugovora, naručitelja i konkurencije",
+    "demo.module4": "Budući natečaji i tržišne prilike",
+    
+    // Video Section
+    "video.title": "Pogledajte našu platformu u akciji",
+    "video.subtitle": "Video demonstracija platforme",
     
     // Pricing Section
-    "pricing.title": "Paketi prilagođeni vašim potrebama",
-    "pricing.subtitle": "Odaberite analytics paket koji odgovara vašim potrebama. Sva rješenja uključuju napredne BI dashboarde.",
+    "pricing.title": "Paketi prilagođeni vašem poslovanju",
+    "pricing.subtitle": "Dostupni odabiri prema industrijama ili za cijelu javnu nabavu",
     "pricing.starter.title": "Starter",
     "pricing.starter.desc": "Osnovni paket za jednog korisnika",
     "pricing.starter.feat1": "Fokus na jednu industriju ili regiju",
@@ -68,15 +72,15 @@ const translations = {
     "pricing.offer": "Pošaljite upit ovaj tjedan i dobijte <strong>5 dana besplatnog pristupa</strong> na osnovne module",
     
     // Contact Section
-    "contact.title": "Zanima vas više? Zanima vas više kako naša platforma može transformirati vaš tendering proces? Pošaljite upit i kontaktirati ćemo vas povratno",
-    "contact.desc": "15-minutni live demo naših BI dashboarda pokazat će vam kako možete donijeti bolje business development odluke s data-driven insights. Personalizirana demonstracija analytics mogućnosti za vašu industriju.",
-    "contact.cta": "Pošalji upit",
-    "contact.benefits": "⚡ Odgovaramo u roku 2 sata | 📊 Live BI demo | 🚀 Bez obveza",
+    "contact.title": "Registrirajte se i ostvarite besplatno probno razdoblje",
+    "contact.desc": "",
+    "contact.cta": "Registriraj se",
+    "contact.benefits": "",
     "contact.email.text": "Ili nas kontaktirajte direktno putem emaila:",
     
     // Contact Form
-    "form.title": "Zakaži live demo BI platforme",
-    "form.subtitle": "Naš BI stručnjak će vam pokazati analytics mogućnosti relevantne za vašu industriju",
+    "form.title": "Registriraj se",
+    "form.subtitle": "Unesite vaše podatke i zaprimite podatke za registraciju probne verzije",
     "form.name": "Ime i prezime*",
     "form.name.placeholder": "Vaše ime i prezime",
     "form.email": "Poslovni email*",
@@ -89,11 +93,17 @@ const translations = {
     "form.personType.private": "Privatna osoba",
     "form.company": "Naziv tvrtke*",
     "form.company.placeholder": "Naziv vaše tvrtke",
+    "form.companySize": "Veličina tvrtke*",
+    "form.companySizeSelect": "Odaberi",
+    "form.companySizeMicro": "Mikro (1-9 zaposlenih)",
+    "form.companySizeSmall": "Mala (10-49 zaposlenih)",
+    "form.companySizeMedium": "Srednja (50-249 zaposlenih)",
+    "form.companySizeLarge": "Velika (250+ zaposlenih)",
     "form.industry": "Vaša industrija / djelatnost*",
     "form.industry.placeholder": "npr. Građevinarstvo, Medicina, IT...",
     "form.notes": "Koje BI mogućnosti vas zanimaju? (opcionalno)",
     "form.notes.placeholder": "Market intelligence, competitive analytics, predictive models...",
-    "form.submit": "Rezerviraj demonstraciju sada",
+    "form.submit": "Zatraži probnu verziju",
     "form.privacy": "🔒 Vaši podaci su sigurni i neće biti dijeljeni s trećim stranama",
     
     // Modal
@@ -173,15 +183,15 @@ const translations = {
     "pricing.offer": "Send inquiry this week and get <strong>5 days of free access</strong> to basic modules",
     
     // Contact Section
-    "contact.title": "Interested to learn more? Want to see how our platform can transform your tendering process? Send an inquiry and we will contact you",
+    "contact.title": "Register and get a free trial period",
     "contact.desc": "A 15-minute live demo of our BI dashboards will show you how to make better business development decisions with data-driven insights. Personalized demonstration of analytics capabilities for your industry.",
-    "contact.cta": "Send Inquiry",
+    "contact.cta": "Register",
     "contact.benefits": "⚡ 2-hour response time | 📊 Live BI demo | 🚀 No obligations",
     "contact.email.text": "Or contact us directly via email:",
     
     // Contact Form
-    "form.title": "Schedule Live BI Platform Demo",
-    "form.subtitle": "Our BI expert will show you analytics capabilities relevant to your industry",
+    "form.title": "Register",
+    "form.subtitle": "Enter your details and receive trial version registration data",
     "form.name": "Full Name*",
     "form.name.placeholder": "Your full name",
     "form.email": "Business Email*",
@@ -193,12 +203,16 @@ const translations = {
     "form.personType.legal": "Legal Entity (Company)",
     "form.personType.private": "Private Individual",
     "form.company": "Company Name*",
-    "form.company.placeholder": "Your company name",
-    "form.industry": "Your Industry / Activity*",
+    "form.company.placeholder": "Your company name",    "form.companySize": "Company Size*",
+    "form.companySizeSelect": "Select",
+    "form.companySizeMicro": "Micro (1-9 employees)",
+    "form.companySizeSmall": "Small (10-49 employees)",
+    "form.companySizeMedium": "Medium (50-249 employees)",
+    "form.companySizeLarge": "Large (250+ employees)",    "form.industry": "Your Industry / Activity*",
     "form.industry.placeholder": "e.g. Construction, Healthcare, IT...",
     "form.notes": "Which BI capabilities interest you? (optional)",
     "form.notes.placeholder": "Market intelligence, competitive analytics, predictive models...",
-    "form.submit": "Book Demo Now",
+    "form.submit": "Request Trial Version",
     "form.privacy": "🔒 Your data is secure and will not be shared with third parties",
     
     // Modal
