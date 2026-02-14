@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="img.png">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sustavno rješenje za javnu nabavu</title>
+  <title>TenderAtlas | Sustavno rješenje za javnu nabavu</title>
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Google Inter font -->
@@ -98,6 +98,9 @@
     }
   </style>
 
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
   <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token":"614df7dde3554b7c90e3f65b33d34cb9"}'></script>
@@ -109,12 +112,31 @@
   <!-- Fixed Navigation Bar -->
   <nav class="fixed-nav">
     <div class="nav-container">
-      <div class="nav-links">
+      <a href="/" class="nav-logo" aria-label="TenderAtlas">
+        <svg viewBox="0 0 1600 500" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+          <defs>
+            <linearGradient id="metalBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4a90c4"/>
+              <stop offset="40%" stop-color="#6bb5e0"/>
+              <stop offset="60%" stop-color="#4a90c4"/>
+              <stop offset="100%" stop-color="#b5ffe1"/>
+            </linearGradient>
+          </defs>
+          <polygon points="300,150 390,200 390,300 300,350 210,300 210,200" fill="none" stroke="url(#metalBlue)" stroke-width="18" stroke-linejoin="round"/>
+          <text x="450" y="305" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="160" fill="url(#metalBlue)" letter-spacing="1">
+            <tspan font-weight="700">Tender</tspan><tspan font-weight="500">Atlas</tspan>
+          </text>
+        </svg>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
         <a href="#demo-alata" class="nav-link" data-i18n="nav.solution">Naše rješenje</a>
         <a href="#pretplate" class="nav-link" data-i18n="nav.pricing">Moduli i pretplate</a>
         <a href="#kontakt" class="nav-link" id="navKontakt" data-i18n="nav.contact">Kontaktiraj nas</a>
       </div>
-      <div style="display:flex; align-items:center; gap:15px;">
+      <div class="nav-right">
         <!-- Language Toggle -->
         <div class="lang-toggle">
           <button id="lang-hr" class="lang-btn active">HR</button>
@@ -133,49 +155,113 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1 data-i18n="hero.title">Sustavno rješenje za javnu nabavu </h1>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="hero-logo">
+      <svg viewBox="0 0 1600 500" xmlns="http://www.w3.org/2000/svg" class="hero-logo-svg">
+        <defs>
+          <linearGradient id="metalBlueHero" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4a90c4"/>
+            <stop offset="40%" stop-color="#6bb5e0"/>
+            <stop offset="60%" stop-color="#4a90c4"/>
+            <stop offset="100%" stop-color="#b5ffe1"/>
+          </linearGradient>
+        </defs>
+        <polygon points="300,150 390,200 390,300 300,350 210,300 210,200" fill="none" stroke="url(#metalBlueHero)" stroke-width="18" stroke-linejoin="round"/>
+        <text x="450" y="305" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="160" fill="url(#metalBlueHero)" letter-spacing="1">
+          <tspan font-weight="700">Tender</tspan><tspan font-weight="500">Atlas</tspan>
+        </text>
+      </svg>
+    </div>
+    <h1 class="sr-only">TenderAtlas — Platforma za analitiku javne nabave u Hrvatskoj</h1>
     <p data-i18n="hero.subtitle">Platforma za pregled podataka javnih natječaja, analitiku tržišta javne nabave i statistike javnih naručitelja u Hrvatskoj.</p>
-    <a id="heroCTA" class="cta" href="#contactFormSection" data-i18n="hero.cta">Isprobaj besplatnu demonstraciju</a>
+    <a id="heroCTA" class="cta" href="#kontakt" data-i18n="hero.cta">Isprobaj besplatnu demonstraciju</a>
   </section>
 
-  <!-- Case Study / Example -->
+  <!-- Stats Section -->
+  <section class="container stats-strip">
+    <div class="stats-section reveal">
+      <div class="stat-item stagger-1">
+        <div class="stat-number">50K+</div>
+        <div class="stat-label" data-i18n="stats.tenders">Natječaja u bazi</div>
+      </div>
+      <div class="stat-item stagger-2">
+        <div class="stat-number">12+</div>
+        <div class="stat-label" data-i18n="stats.industries">Industrija</div>
+      </div>
+      <div class="stat-item stagger-3">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label" data-i18n="stats.monitoring">Praćenje natječaja</div>
+      </div>
+      <div class="stat-item stagger-4">
+        <div class="stat-number">100%</div>
+        <div class="stat-label" data-i18n="stats.data">Podaci javne nabave RH</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
   <section class="container">
-    <h2 data-i18n="bi.title">Kompletno i sustavno rješenje za javnu nabavu</h2>
+    <div class="section-divider reveal"></div>
+    <h2 class="reveal" data-i18n="bi.title">Kompletno i sustavno rješenje za javnu nabavu</h2>
+    <p class="section-subtitle reveal">Sve što trebate za praćenje, analizu i uspjeh u javnoj nabavi — na jednom mjestu.</p>
 
-    <div class="icon-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 40px;">
-      <div style="text-align: center;">
-        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 20px; color: var(--primary-blue);">
-          <path d="M3 3v18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M18 17l-5-5-3 3-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="18" cy="17" r="2" fill="currentColor"/>
-          <circle cx="13" cy="12" r="2" fill="currentColor"/>
-          <circle cx="10" cy="15" r="2" fill="currentColor"/>
-          <circle cx="6" cy="11" r="2" fill="currentColor"/>
-        </svg>
-        <div class="features">
-          <p>Steknite pristup Business Intelligence izvještajma specijaliziranima za vašu industriju ili cijelu javnu nabavu</p>
+    <div class="card-grid">
+      <div class="glass-card reveal stagger-1">
+        <div class="card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3v18h18" stroke="var(--aquamarine)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 17l-5-5-3 3-4-4" stroke="var(--aquamarine)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
+        <h4 class="card-title">Business Intelligence</h4>
+        <p class="card-desc">Pristupite BI izvještajima specijaliziranima za vašu industriju ili cjelokupnu javnu nabavu.</p>
       </div>
 
-      <div style="text-align: center;">
-        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 20px; color: var(--primary-blue);">
-          <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="18" cy="7" r="3" fill="var(--soft-cyan)"/>
-        </svg>
-        <div class="features">
-          <p>Dobivajte automatizirano slanje obavijesti i izvještavanje o novim natječajima ili zbivanjima na tržištu javne nabave i industrije</p>
+      <div class="glass-card reveal stagger-2">
+        <div class="card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="var(--aquamarine)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
+        <h4 class="card-title">Automatske obavijesti</h4>
+        <p class="card-desc">Primajte obavijesti o novim natječajima i tržišnim promjenama u vašoj industriji.</p>
       </div>
 
-      <div style="text-align: center;">
-        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 20px; color: var(--primary-blue);">
-          <path d="M8 13H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M8 17H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M8 9H10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <div class="features">
-          <p>Steknite više uvida u dokumentaciju Javnih Nabava preko našeg AI modela</p>
+      <div class="glass-card reveal stagger-3">
+        <div class="card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="var(--aquamarine)" stroke-width="2"/>
+            <path d="M8 12l3 3 5-6" stroke="var(--aquamarine)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
+        <h4 class="card-title">AI analiza dokumentacije</h4>
+        <p class="card-desc">Steknite dublje uvide u natječajnu dokumentaciju uz pomoć AI modela.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="container">
+    <div class="section-divider reveal"></div>
+    <h2 class="reveal" data-i18n="steps.title">Kako funkcionira?</h2>
+    <p class="section-subtitle reveal">Tri jednostavna koraka do potpunog pregleda tržišta javne nabave</p>
+
+    <div class="steps-container">
+      <div class="step-item reveal stagger-1">
+        <div class="step-number">1</div>
+        <h4>Registrirajte se</h4>
+        <p>Kreirajte besplatni probni račun i odaberite industriju koja vas zanima</p>
+      </div>
+      <div class="step-item reveal stagger-2">
+        <div class="step-number">2</div>
+        <h4>Istražite podatke</h4>
+        <p>Pristupite vizualizacijama, analitikama i izvještajima javne nabave</p>
+      </div>
+      <div class="step-item reveal stagger-3">
+        <div class="step-number">3</div>
+        <h4>Donosite odluke</h4>
+        <p>Koristite uvide za strateško planiranje i sudjelovanje na natječajima</p>
       </div>
     </div>
   </section>
@@ -227,12 +313,13 @@
   -->
 
   <!-- Pricing -->
-  <section id="pretplate" class="container alt">
-    <h2 data-i18n="pricing.title">Paketi prilagođeni vašem poslovanju</h2>
-    <p style="text-align:center; margin-bottom:40px;" data-i18n="pricing.subtitle">Dostupni odabiri prema industrijama ili za cijelu javnu nabavu</p>
+  <section id="pretplate" class="container">
+    <div class="section-divider reveal"></div>
+    <h2 class="reveal" data-i18n="pricing.title">Paketi prilagođeni vašem poslovanju</h2>
+    <p class="section-subtitle reveal" data-i18n="pricing.subtitle">Dostupni odabiri prema industrijama ili za cijelu javnu nabavu</p>
 
     <!-- Industries List -->
-    <div class="industries-section" style="margin-bottom: 50px;">
+    <div class="industries-section reveal" style="margin-bottom: 50px;">
       <div class="industries-list">
         <span class="industry-item">Građevinarstvo</span>
         <span class="industry-item">Medicinska industrija i industrija lijekova</span>
@@ -250,18 +337,40 @@
     </div>
   </section>
 
+  <!-- Trust Bar -->
+  <section class="container trust-section">
+    <div class="trust-bar reveal">
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Sigurni podaci</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>GDPR sukladnost</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Real-time ažuriranje</span>
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2"/></svg>
+        <span>Podrška za timove</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact CTA -->
   <section id="kontakt" class="container">
-    <p></p>
-    <h2 data-i18n="contact.title">Registrirajte se i ostvarite besplatno probno razdoblje</h2>
+    <div class="section-divider reveal"></div>
+    <h2 class="reveal" data-i18n="contact.title">Registrirajte se i ostvarite besplatno probno razdoblje</h2>
 
-    <div style="text-align:center;">
+    <div class="contact-block reveal">
       <a class="cta" href="#contactFormSection" id="openContactForm" data-i18n="contact.cta">Registriraj se</a>
       
-      <div style="margin-top:25px; padding-top:25px; border-top: 1px solid rgba(88, 166, 255, 0.15);">
-        <p style="color: var(--text-muted); font-size:0.95em; margin-bottom:12px;" data-i18n="contact.emailIntro">Ili nas kontaktirajte direktno putem emaila:</p>
-        <a href="mailto:info@kti.hr" style="display:inline-flex; align-items:center; gap:8px; color: var(--primary-blue); font-size:1.05em; font-weight:600; text-decoration:none; transition: all 0.3s ease;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+      <div class="contact-email-divider">
+        <p data-i18n="contact.emailIntro">Ili nas kontaktirajte direktno putem emaila:</p>
+        <a href="mailto:info@kti.hr" class="email-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           info@kti.hr
@@ -271,43 +380,43 @@
   </section>
 
   <!-- Hidden contact form -->
-  <section id="contactFormSection" class="contact-form-section" style="display:none; max-width: 700px; margin: 30px auto; padding: 40px 25px; background: rgba(8, 65, 92, 0.7); border-radius: 12px; border: 1px solid rgba(56, 134, 151, 0.4); box-shadow: 0 0 25px rgba(0,0,0,0.5), 0 0 15px rgba(56, 134, 151, 0.1) inset; backdrop-filter: blur(8px);">
-    <h2 data-i18n="form.title" style="text-align: center; color: var(--aquamarine); margin-bottom: 10px;">Registriraj se</h2>
-    <p data-i18n="form.subtitle" style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Unesite vaše podatke i zaprimite podatke za registraciju probne verzije</p>
+  <section id="contactFormSection" class="contact-form-section" style="display:none;">
+    <h2 data-i18n="form.title">Registriraj se</h2>
+    <p data-i18n="form.subtitle">Unesite vaše podatke i zaprimite podatke za registraciju probne verzije</p>
 
-    <form id="contactForm" style="display: block; width: 100%;">
-      <div style="margin-bottom: 20px; width: 100%;">
-        <label for="fullName" data-i18n="form.fullName" style="display: block; width: 100%; color: var(--aquamarine); font-weight: 600; font-size: 0.95em; margin-bottom: 8px;">Ime i prezime*</label>
-        <input type="text" id="fullName" name="fullName" required data-i18n-placeholder="form.fullNamePh" placeholder="Vaše ime i prezime" style="width: 100%; display: block; padding: 14px 16px; border-radius: 8px; border: 1px solid rgba(56, 134, 151, 0.4); background: rgba(8, 65, 92, 0.4); color: #fff; font-size: 0.98em; box-sizing: border-box;">
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="fullName" data-i18n="form.fullName">Ime i prezime*</label>
+        <input type="text" id="fullName" name="fullName" required data-i18n-placeholder="form.fullNamePh" placeholder="Vaše ime i prezime">
       </div>
 
-      <div style="margin-bottom: 20px; width: 100%;">
-        <label for="email" data-i18n="form.email" style="display: block; width: 100%; color: var(--aquamarine); font-weight: 600; font-size: 0.95em; margin-bottom: 8px;">Poslovni email*</label>
-        <input type="email" id="email" name="email" required data-i18n-placeholder="form.emailPh" placeholder="vas@tvrtka.hr" style="width: 100%; display: block; padding: 14px 16px; border-radius: 8px; border: 1px solid rgba(56, 134, 151, 0.4); background: rgba(8, 65, 92, 0.4); color: #fff; font-size: 0.98em; box-sizing: border-box;">
+      <div class="form-group">
+        <label for="email" data-i18n="form.email">Poslovni email*</label>
+        <input type="email" id="email" name="email" required data-i18n-placeholder="form.emailPh" placeholder="vas@tvrtka.hr">
       </div>
 
-      <div style="margin-bottom: 20px; width: 100%;">
-        <label for="phone" data-i18n="form.phone" style="display: block; width: 100%; color: var(--aquamarine); font-weight: 600; font-size: 0.95em; margin-bottom: 8px;">Kontakt telefon*</label>
-        <input type="tel" id="phone" name="phone" required data-i18n-placeholder="form.phonePh" placeholder="+385 ..." style="width: 100%; display: block; padding: 14px 16px; border-radius: 8px; border: 1px solid rgba(56, 134, 151, 0.4); background: rgba(8, 65, 92, 0.4); color: #fff; font-size: 0.98em; box-sizing: border-box;">
+      <div class="form-group">
+        <label for="phone" data-i18n="form.phone">Kontakt telefon*</label>
+        <input type="tel" id="phone" name="phone" required data-i18n-placeholder="form.phonePh" placeholder="+385 ...">
       </div>
 
-      <div style="margin-bottom: 20px; width: 100%;">
-        <label for="personType" data-i18n="form.personType" style="display: block; width: 100%; color: var(--aquamarine); font-weight: 600; font-size: 0.95em; margin-bottom: 8px;">Vrsta osobe*</label>
-        <select id="personType" name="personType" required onchange="toggleCompany()" style="width: 100%; display: block; padding: 14px 16px; border-radius: 8px; border: 1px solid rgba(56, 134, 151, 0.4); background: rgba(8, 65, 92, 0.4); color: #fff; font-size: 0.98em; box-sizing: border-box;">
+      <div class="form-group">
+        <label for="personType" data-i18n="form.personType">Vrsta osobe*</label>
+        <select id="personType" name="personType" required>
           <option value="" data-i18n="form.personTypeSelect">Odaberi</option>
           <option value="pravna" data-i18n="form.personTypeLegal">Pravna osoba (tvrtka)</option>
           <option value="privatna" data-i18n="form.personTypePrivate">Privatna osoba</option>
         </select>
       </div>
 
-      <div id="companyField" style="display:none; margin-bottom: 20px; width: 100%;">
-        <label for="companyName" data-i18n="form.companyName" style="display: block; width: 100%; color: var(--aquamarine); font-weight: 600; font-size: 0.95em; margin-bottom: 8px;">Naziv tvrtke*</label>
-        <input type="text" id="companyName" name="companyName" data-i18n-placeholder="form.companyNamePh" placeholder="Naziv vaše tvrtke" style="width: 100%; display: block; padding: 14px 16px; border-radius: 8px; border: 1px solid rgba(56, 134, 151, 0.4); background: rgba(8, 65, 92, 0.4); color: #fff; font-size: 0.98em; box-sizing: border-box;">
+      <div id="companyField" class="form-group" style="display:none;">
+        <label for="companyName" data-i18n="form.companyName">Naziv tvrtke*</label>
+        <input type="text" id="companyName" name="companyName" data-i18n-placeholder="form.companyNamePh" placeholder="Naziv vaše tvrtke">
       </div>
 
-      <div id="companySizeField" style="display:none; margin-bottom: 20px; width: 100%;">
-        <label for="companySize" data-i18n="form.companySize" style="display: block; width: 100%; color: var(--aquamarine); font-weight: 600; font-size: 0.95em; margin-bottom: 8px;">Veličina tvrtke*</label>
-        <select id="companySize" name="companySize" style="width: 100%; display: block; padding: 14px 16px; border-radius: 8px; border: 1px solid rgba(56, 134, 151, 0.4); background: rgba(8, 65, 92, 0.4); color: #fff; font-size: 0.98em; box-sizing: border-box;">
+      <div id="companySizeField" class="form-group" style="display:none;">
+        <label for="companySize" data-i18n="form.companySize">Veličina tvrtke*</label>
+        <select id="companySize" name="companySize">
           <option value="" data-i18n="form.companySizeSelect">Odaberi</option>
           <option value="mikro" data-i18n="form.companySizeMicro">Mikro (1-9 zaposlenih)</option>
           <option value="mala" data-i18n="form.companySizeSmall">Mala (10-49 zaposlenih)</option>
@@ -316,12 +425,12 @@
         </select>
       </div>
 
-      <div style="margin-bottom: 20px; width: 100%;">
-        <label for="industry" data-i18n="form.industry" style="display: block; width: 100%; color: var(--aquamarine); font-weight: 600; font-size: 0.95em; margin-bottom: 8px;">Vaša industrija / djelatnost*</label>
-        <input type="text" id="industry" name="industry" required data-i18n-placeholder="form.industryPh" placeholder="npr. Građevinarstvo, Medicina, IT..." style="width: 100%; display: block; padding: 14px 16px; border-radius: 8px; border: 1px solid rgba(56, 134, 151, 0.4); background: rgba(8, 65, 92, 0.4); color: #fff; font-size: 0.98em; box-sizing: border-box;">
+      <div class="form-group">
+        <label for="industry" data-i18n="form.industry">Vaša industrija / djelatnost*</label>
+        <input type="text" id="industry" name="industry" required data-i18n-placeholder="form.industryPh" placeholder="npr. Građevinarstvo, Medicina, IT...">
       </div>
 
-      <button type="submit" data-i18n="form.submit" style="width: 100%; display: block; padding: 14px 16px; background: linear-gradient(90deg, var(--pacific-cyan), var(--aquamarine)); color: #08415c; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; margin-top: 20px; box-shadow: 0 0 15px rgba(56, 134, 151, 0.4); font-size: 1em; transition: transform 0.3s, box-shadow 0.3s;">Zatraži probnu verziju</button>
+      <button type="submit" id="formSubmitBtn" data-i18n="form.submit">Zatraži probnu verziju</button>
     </form>
 
     <div id="formMessage"></div>
@@ -342,13 +451,41 @@
     </div>
   </div>
 
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
   <!-- Footer -->
-  <footer style="text-align: center; padding: 40px 20px; background: rgba(8, 65, 92, 0.5); color: var(--text-dimmed); border-top: 1px solid rgba(56, 134, 151, 0.2); width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; display: block;">
-    <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap;">
-      <a href="#kontakt" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" data-i18n="footer.contact">Kontakt</a>
-      <a href="uvjeti.html" style="color: var(--text-muted); text-decoration: none; transition: color 0.3s;" data-i18n="footer.terms">Opći uvjeti poslovanja</a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <svg viewBox="195 140 1250 225" xmlns="http://www.w3.org/2000/svg" class="footer-logo">
+          <defs>
+            <linearGradient id="metalBlueFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4a90c4"/>
+              <stop offset="40%" stop-color="#6bb5e0"/>
+              <stop offset="60%" stop-color="#4a90c4"/>
+              <stop offset="100%" stop-color="#b5ffe1"/>
+            </linearGradient>
+          </defs>
+          <polygon points="300,150 390,200 390,300 300,350 210,300 210,200" fill="none" stroke="url(#metalBlueFooter)" stroke-width="18" stroke-linejoin="round"/>
+          <text x="450" y="305" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="160" fill="url(#metalBlueFooter)" letter-spacing="1">
+            <tspan font-weight="700">Tender</tspan><tspan font-weight="500">Atlas</tspan>
+          </text>
+        </svg>
+      </div>
+      <div class="footer-center">
+        <a href="#demo-alata" data-i18n="nav.solution">Naše rješenje</a>
+        <a href="#pretplate" data-i18n="nav.pricing">Moduli i pretplate</a>
+        <a href="#kontakt" data-i18n="footer.contact">Kontakt</a>
+        <a href="uvjeti.html" data-i18n="footer.terms">Opći Uvjeti Korištenja</a>
+        <a href="mailto:info@kti.hr">info@kti.hr</a>
+      </div>
     </div>
-    <p style="margin: 0; font-size: 0.85em;" data-i18n="footer.text">&copy; 2026 | Sva prava zadržana | Svi podaci prikazani na ovoj stranici kao i na stranici app.javna.eu su informativnog karaktera</p>
+    <div class="footer-bottom">
+      <p data-i18n="footer.text">&copy; 2026 Sva prava zadržana</p>
+    </div>
   </footer>
 
   <script src="js/translations.js"></script>

@@ -8,7 +8,7 @@ const translations = {
     "nav.users": "Registrirani korisnici",
     
     // Hero Section
-    "hero.title": "Sustavno rješenje za javnu nabavu",
+    "hero.title": "TenderAtlas",
     "hero.subtitle": "Jedino rješenje za javnu nabavu koje trebate. Točnost. Pravovremenost. Kvaliteta.",
     "hero.cta": "Vidi više",
     
@@ -123,7 +123,7 @@ const translations = {
     "nav.users": "Registered Users",
     
     // Hero Section
-    "hero.title": "Systematic Solution for Public Procurement",
+    "hero.title": "TenderAtlas",
     "hero.subtitle": "The only public procurement solution you need. Accuracy. Timeliness. Quality.",
     "hero.cta": "Learn More",
     
